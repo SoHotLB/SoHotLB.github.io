@@ -1186,7 +1186,7 @@ input {
   transition-property: all;
   transition-duration: 0.3s;
   transition-delay: 0s;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.9);
   box-shadow: 0 0 10px rgba(255,255,255,0.1);
 /* tag 容器 */
 }
@@ -1711,6 +1711,9 @@ input {
 }
 .post-toc ol .toc-child {
   font-size: 1rem;
+  overflow: hidden;
+  transition: max-height 0.6s ease-in;
+  max-height: 0;
 }
 .post-toc ol .toc-item.active>.toc-link {
   color: #f2711c;
@@ -2182,7 +2185,7 @@ input {
   }
   :root:not([data-user-color-scheme]) .post-card {
     color: #fff;
-    background-color: rgba(27,31,46,0.8);
+    background-color: rgba(27,31,46,0.9);
     box-shadow: 0 1px 8px rgba(27,31,46,0.1);
   }
   :root:not([data-user-color-scheme]) .page-number-basic {
@@ -2249,7 +2252,7 @@ input {
 }
 [data-user-color-scheme='dark'] .post-card {
   color: #fff;
-  background-color: rgba(27,31,46,0.8);
+  background-color: rgba(27,31,46,0.9);
   box-shadow: 0 1px 8px rgba(27,31,46,0.1);
 }
 [data-user-color-scheme='dark'] .page-number-basic {
