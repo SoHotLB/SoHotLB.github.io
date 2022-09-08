@@ -13,22 +13,22 @@ cdn:
       iconfont: //at.alicdn.com/t/font_1140697_dxory92pb0h.js
     defer:
  
-# reward:
-#   enable: true
-#   comment: 我很可爱，请给我钱
-#   methods:
-#     - name: 支付宝
-#       path: https://cdn.yunyoujun.cn/img/donate/alipay-qrcode.jpg
-#       color: '#00A3EE'
-#       icon: ri:alipay-line
-#     - name: QQ 支付
-#       path: https://cdn.yunyoujun.cn/img/donate/qqpay-qrcode.png
-#       color: '#12B7F5'
-#       icon: ri:qq-line
-#     - name: 微信支付
-#       path: https://cdn.yunyoujun.cn/img/donate/wechatpay-qrcode.jpg
-#       color: '#2DC100'
-#       icon: ri:wechat-pay-line
+reward:
+  enable: false
+  comment: 我很可爱，请给我钱
+  # methods:
+  #   - name: 支付宝
+  #     path: https://cdn.yunyoujun.cn/img/donate/alipay-qrcode.jpg
+  #     color: '#00A3EE'
+  #     icon: ri:alipay-line
+  #   - name: QQ 支付
+  #     path: https://cdn.yunyoujun.cn/img/donate/qqpay-qrcode.png
+  #     color: '#12B7F5'
+  #     icon: ri:qq-line
+  #   - name: 微信支付
+  #     path: https://cdn.yunyoujun.cn/img/donate/wechatpay-qrcode.jpg
+  #     color: '#2DC100'
+  #     icon: ri:wechat-pay-line
 
 # comment:
 #   candidates:
