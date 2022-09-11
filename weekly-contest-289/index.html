@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.classList.toggle('dark', true)
 })()</script><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><link rel="stylesheet" href="/SoHotLB.github.io/css/prism-material-dark.css" type="text/css"></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+<!-- hexo injector head_end end --><link rel="stylesheet" href="/SoHotLB.github.io/css/prism-one-dark.css" type="text/css"></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
 IconifyProviders = {
   // Empty prefix: overwrite default API provider configuration
   '': {
@@ -55,31 +55,30 @@ IconifyProviders = {
     // Wait for 1 second before switching API hosts
     rotate: 1000,
   },
-};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/SoHotLB.github.io/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/SoHotLB.github.io/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/SoHotLB.github.io/about/" title="lb"><img width="96" loading="lazy" src="/SoHotLB.github.io/images/avatar.jpg" alt="lb"></a><div class="site-author-name"><a href="/SoHotLB.github.io/about/">lb</a></div><span class="site-name">lb's blog</span><sub class="site-subtitle">明天会在哪，勇敢无畏的去闯吧</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/SoHotLB.github.io/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/SoHotLB.github.io/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">40</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">6</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">7</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/SoHotLB" title="GitHub" target="_blank" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:2864939950@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><span class="icon iconify" data-icon="ri:mail-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/jue-ze-83-77/" title="知乎" target="_blank" style="color:#0084FF"><span class="icon iconify" data-icon="ri:zhihu-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode%E7%AC%AC289%E5%9C%BA%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3"><span class="toc-text">LeetCode第289场周赛题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%95%B0%E5%AD%97%E5%92%8C"><span class="toc-text">一、计算字符串的数字和</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%A8%A1%E6%8B%9F"><span class="toc-text">题解：模拟</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%8C%E6%88%90%E6%89%80%E6%9C%89%E4%BB%BB%E5%8A%A1%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%80%E5%B0%91%E8%BD%AE%E6%95%B0"><span class="toc-text">二、完成所有任务需要的最少轮数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E8%B4%AA%E5%BF%83-%E5%93%88%E5%B8%8C"><span class="toc-text">题解：贪心+哈希</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BD%AC%E8%A7%92%E8%B7%AF%E5%BE%84%E7%9A%84%E4%B9%98%E7%A7%AF%E4%B8%AD%E6%9C%80%E5%A4%9A%E8%83%BD%E6%9C%89%E5%87%A0%E4%B8%AA%E5%B0%BE%E9%9A%8F%E9%9B%B6"><span class="toc-text">三、转角路径的乘积中最多能有几个尾随零</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E5%89%8D%E7%BC%80%E5%92%8C-%E6%9E%9A%E4%B8%BE"><span class="toc-text">题解：前缀和+枚举</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%9B%B8%E9%82%BB%E5%AD%97%E7%AC%A6%E4%B8%8D%E5%90%8C%E7%9A%84%E6%9C%80%E9%95%BF%E8%B7%AF%E5%BE%84"><span class="toc-text">四、相邻字符不同的最长路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84%EF%BC%88%E6%A0%91%E5%BD%A2dp%EF%BC%89"><span class="toc-text">题解：树的直径（树形dp）</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://bbstudy.net/SoHotLB.github.io/weekly-contest-289/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="lb"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="lb's blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">LeetCode第289场周赛<a class="post-edit-link" href="https://github.com/SoHotLB/SoHotLB.github.io/tree/master/source/_posts/weekly-contest-289.md" target="_blank" title="编辑" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2022-09-07 21:19:54" itemprop="dateCreated datePublished" datetime="2022-09-07T21:19:54+08:00">2022-09-07</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="修改时间：2022-04-30 11:29:46" itemprop="dateModified" datetime="2022-04-30T11:29:46+08:00">2022-04-30</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">141</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">1m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><span class="icon iconify" data-icon="ri:eye-line"></span> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/SoHotLB.github.io/categories/LeetCode%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3/" style="--text-color:saddlebrown" itemprop="url" rel="index"><span itemprop="text">LeetCode周赛题解</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/SoHotLB.github.io/tags/LeetCode/" style="--text-color:#5298d1"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">LeetCode</span></a><a class="tag-item" href="/SoHotLB.github.io/tags/Algorithm/" style="--text-color:#FF0000"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">Algorithm</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h2 id="LeetCode第289场周赛题解"><a href="#LeetCode第289场周赛题解" class="headerlink" title="LeetCode第289场周赛题解"></a>LeetCode第289场周赛题解</h2><blockquote>
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/SoHotLB.github.io/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/SoHotLB.github.io/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/SoHotLB.github.io/about/" title="lb"><img width="96" loading="lazy" src="/SoHotLB.github.io/images/avatar.jpg" alt="lb"></a><div class="site-author-name"><a href="/SoHotLB.github.io/about/">lb</a></div><span class="site-name">lb's blog</span><sub class="site-subtitle">明天会在哪，勇敢无畏的去闯吧</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/SoHotLB.github.io/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/SoHotLB.github.io/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">40</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">6</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">7</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/SoHotLB" title="GitHub" target="_blank" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:2864939950@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><span class="icon iconify" data-icon="ri:mail-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/jue-ze-83-77/" title="知乎" target="_blank" style="color:#0084FF"><span class="icon iconify" data-icon="ri:zhihu-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode%E7%AC%AC289%E5%9C%BA%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3"><span class="toc-text">LeetCode第289场周赛题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%95%B0%E5%AD%97%E5%92%8C"><span class="toc-text">一、计算字符串的数字和</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%A8%A1%E6%8B%9F"><span class="toc-text">题解：模拟</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%8C%E6%88%90%E6%89%80%E6%9C%89%E4%BB%BB%E5%8A%A1%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%80%E5%B0%91%E8%BD%AE%E6%95%B0"><span class="toc-text">二、完成所有任务需要的最少轮数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E8%B4%AA%E5%BF%83-%E5%93%88%E5%B8%8C"><span class="toc-text">题解：贪心+哈希</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BD%AC%E8%A7%92%E8%B7%AF%E5%BE%84%E7%9A%84%E4%B9%98%E7%A7%AF%E4%B8%AD%E6%9C%80%E5%A4%9A%E8%83%BD%E6%9C%89%E5%87%A0%E4%B8%AA%E5%B0%BE%E9%9A%8F%E9%9B%B6"><span class="toc-text">三、转角路径的乘积中最多能有几个尾随零</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E5%89%8D%E7%BC%80%E5%92%8C-%E6%9E%9A%E4%B8%BE"><span class="toc-text">题解：前缀和+枚举</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%9B%B8%E9%82%BB%E5%AD%97%E7%AC%A6%E4%B8%8D%E5%90%8C%E7%9A%84%E6%9C%80%E9%95%BF%E8%B7%AF%E5%BE%84"><span class="toc-text">四、相邻字符不同的最长路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84%EF%BC%88%E6%A0%91%E5%BD%A2dp%EF%BC%89"><span class="toc-text">题解：树的直径（树形dp）</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://bbstudy.net/SoHotLB.github.io/weekly-contest-289/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="lb"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="lb's blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">LeetCode第289场周赛<a class="post-edit-link" href="https://github.com/SoHotLB/SoHotLB.github.io/tree/master/source/_posts/weekly-contest-289.md" target="_blank" title="编辑" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2022-09-07 21:19:54" itemprop="dateCreated datePublished" datetime="2022-09-07T21:19:54+08:00">2022-09-07</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="修改时间：2022-04-30 11:29:46" itemprop="dateModified" datetime="2022-04-30T11:29:46+08:00">2022-04-30</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">1.4k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">6m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><span class="icon iconify" data-icon="ri:eye-line"></span> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/SoHotLB.github.io/categories/LeetCode%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3/" style="--text-color:saddlebrown" itemprop="url" rel="index"><span itemprop="text">LeetCode周赛题解</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/SoHotLB.github.io/tags/LeetCode/" style="--text-color:#5298d1"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">LeetCode</span></a><a class="tag-item" href="/SoHotLB.github.io/tags/Algorithm/" style="--text-color:#FF0000"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">Algorithm</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h2 id="LeetCode第289场周赛题解"><a href="#LeetCode第289场周赛题解" class="headerlink" title="LeetCode第289场周赛题解"></a>LeetCode第289场周赛题解</h2><blockquote>
 <p>比赛地址：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/weekly-contest-289/">https://leetcode-cn.com/contest/weekly-contest-289/</a></p>
 </blockquote>
 <h3 id="一、计算字符串的数字和"><a href="#一、计算字符串的数字和" class="headerlink" title="一、计算字符串的数字和"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/calculate-digit-sum-of-a-string/">一、计算字符串的数字和</a></h3><h4 id="题解：模拟"><a href="#题解：模拟" class="headerlink" title="题解：模拟"></a>题解：模拟</h4><p>不断迭代字符串，如果长度超过k则进行划分然后按照题意求和相加，直到最终字符串长度小于k，结束循环。</p>
 <p>注意：最后一组可能长度小于k，所以需要和字符串长度比较选择最小值（防止越界）。</p>
 <p><strong>C++代码：</strong></p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution &#123;
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp">class Solution &#123;
 public:
     string digitSum(string s, int k) &#123;
-        int n=s.size();
-        while(n>k)&#123;
-            string str="";
-            for(int i=0;i<n;i+=k)&#123;
-                int num=0;
-                for(int j=i;j<min(i+k,n);j++)&#123;
-                    num+=(s[j]-'0');
+        int n&#x3D;s.size();
+        while(n&gt;k)&#123;
+            string str&#x3D;&quot;&quot;;
+            for(int i&#x3D;0;i&lt;n;i+&#x3D;k)&#123;
+                int num&#x3D;0;
+                for(int j&#x3D;i;j&lt;min(i+k,n);j++)&#123;
+                    num+&#x3D;(s[j]-&#39;0&#39;);
                 &#125;
-                str+=to_string(num);
+                str+&#x3D;to_string(num);
             &#125;
-            s=str;n=s.size();
+            s&#x3D;str;n&#x3D;s.size();
         &#125;
         return s;
     &#125;
-&#125;;
-</code></pre>
+&#125;;</code></pre>
 <h3 id="二、完成所有任务需要的最少轮数"><a href="#二、完成所有任务需要的最少轮数" class="headerlink" title="二、完成所有任务需要的最少轮数"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-rounds-to-complete-all-tasks/">二、完成所有任务需要的最少轮数</a></h3><h4 id="题解：贪心-哈希"><a href="#题解：贪心-哈希" class="headerlink" title="题解：贪心+哈希"></a>题解：贪心+哈希</h4><p>由于每次可以完成2个或者3个相同难度级别的任务，于是可以知道：假设难度级别为i的任务有n个，</p>
 <ul>
 <li>如果n==1，则始终无法完成任务</li>
@@ -89,23 +88,22 @@ public:
 <p>于是对于n&gt;=3的情况，只需要向上取整即可（为方便处理，只需要(n+2)/3即可）</p>
 <p>同时使用哈希表存储每个难度级别对应的任务数量。</p>
 <p><strong>C++代码：</strong></p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution &#123;
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp">class Solution &#123;
 public:
-    int minimumRounds(vector<int>& tasks) &#123;
-        int n=tasks.size();
-        map<int,int>mp;
-        for(int i=0;i<n;i++)&#123;
+    int minimumRounds(vector&lt;int&gt;&amp; tasks) &#123;
+        int n&#x3D;tasks.size();
+        map&lt;int,int&gt;mp;
+        for(int i&#x3D;0;i&lt;n;i++)&#123;
             mp[tasks[i]]++;
         &#125;
-        int ans=0;
+        int ans&#x3D;0;
         for(auto it:mp)&#123;
-            if(it.second==1) return -1;
-            ans+=(it.second+2)/3;
+            if(it.second&#x3D;&#x3D;1) return -1;
+            ans+&#x3D;(it.second+2)&#x2F;3;
         &#125;
         return ans;
     &#125;
-&#125;;
-</code></pre>
+&#125;;</code></pre>
 <h3 id="三、转角路径的乘积中最多能有几个尾随零"><a href="#三、转角路径的乘积中最多能有几个尾随零" class="headerlink" title="三、转角路径的乘积中最多能有几个尾随零"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-trailing-zeros-in-a-cornered-path/">三、转角路径的乘积中最多能有几个尾随零</a></h3><h4 id="题解：前缀和-枚举"><a href="#题解：前缀和-枚举" class="headerlink" title="题解：前缀和+枚举"></a>题解：前缀和+枚举</h4><blockquote>
 <p>参考链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-trailing-zeros-in-a-cornered-path/solution/by-tsreaper-ukq5/">https://leetcode-cn.com/problems/maximum-trailing-zeros-in-a-cornered-path/solution/by-tsreaper-ukq5/</a></p>
 </blockquote>
@@ -116,83 +114,81 @@ public:
 <p>还是比较复杂….</p>
 </blockquote>
 <p><strong>C++代码：</strong></p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution &#123;
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp">class Solution &#123;
 public:
-    int maxTrailingZeros(vector<vector<int>>& grid) &#123;
-        int n=grid.size();int m=grid[0].size();
-        //每一行、每一列2和5的数量的前缀和
-        vector<vector<int> > r2(n+1),c2(n+1),r5(n+1),c5(n+1);
-        for(int i=0;i<=n;i++)&#123;
-            r2[i]=c2[i]=r5[i]=c5[i]=vector<int>(m+1);
+    int maxTrailingZeros(vector&lt;vector&lt;int&gt;&gt;&amp; grid) &#123;
+        int n&#x3D;grid.size();int m&#x3D;grid[0].size();
+        &#x2F;&#x2F;每一行、每一列2和5的数量的前缀和
+        vector&lt;vector&lt;int&gt; &gt; r2(n+1),c2(n+1),r5(n+1),c5(n+1);
+        for(int i&#x3D;0;i&lt;&#x3D;n;i++)&#123;
+            r2[i]&#x3D;c2[i]&#x3D;r5[i]&#x3D;c5[i]&#x3D;vector&lt;int&gt;(m+1);
         &#125;
-        for(int i=1;i<=n;i++)&#123;
-            for(int j=1;j<=m;j++)&#123;
-                int cnt2=0,cnt5=0;
-                int now=grid[i-1][j-1];
-                while(now%5==0) cnt2++,now/=2;
-                while(now%5==0) cnt5++,now/=5;
-                r2[i][j]=r2[i][j-1]+cnt2;
-                c2[i][j]=c2[i-1][j]+cnt2;
-                r5[i][j]=r5[i][j-1]+cnt5;
-                c5[i][j]=c5[i-1][j]+cnt5;
+        for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;
+            for(int j&#x3D;1;j&lt;&#x3D;m;j++)&#123;
+                int cnt2&#x3D;0,cnt5&#x3D;0;
+                int now&#x3D;grid[i-1][j-1];
+                while(now%5&#x3D;&#x3D;0) cnt2++,now&#x2F;&#x3D;2;
+                while(now%5&#x3D;&#x3D;0) cnt5++,now&#x2F;&#x3D;5;
+                r2[i][j]&#x3D;r2[i][j-1]+cnt2;
+                c2[i][j]&#x3D;c2[i-1][j]+cnt2;
+                r5[i][j]&#x3D;r5[i][j-1]+cnt5;
+                c5[i][j]&#x3D;c5[i-1][j]+cnt5;
             &#125;
         &#125;
-        int ans=0;
-        for(int i=1;i<=n;i++)&#123;
-            for(int j=1;j<=m;j++)&#123;
-                //左--->上方结束
-                ans=max(ans,min(r2[i][j]+c2[i-1][j],r5[i][j]+c5[i-1][j]));
-                //左--->下方结束
-                ans=max(ans,min(r2[i][j]+c2[n][j]-c2[i-1][j],r5[i][j]+c5[n][j]-c5[i][j]));
-                //右--->    上方结束
-                ans=max(ans,min(r2[i][m]-r2[i][j]+c2[i][j],r5[i][m]-r5[i][j]+c5[i][j]));
-                //右--->下方结束
-                ans=max(ans,min(r2[i][m]-r2[i][j]+c2[n][j]-c2[i-1][j],r5[i][m]-r5[i][j]+c5[n][j]-c5[i-1][j]));
+        int ans&#x3D;0;
+        for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;
+            for(int j&#x3D;1;j&lt;&#x3D;m;j++)&#123;
+                &#x2F;&#x2F;左---&gt;上方结束
+                ans&#x3D;max(ans,min(r2[i][j]+c2[i-1][j],r5[i][j]+c5[i-1][j]));
+                &#x2F;&#x2F;左---&gt;下方结束
+                ans&#x3D;max(ans,min(r2[i][j]+c2[n][j]-c2[i-1][j],r5[i][j]+c5[n][j]-c5[i][j]));
+                &#x2F;&#x2F;右---&gt;	上方结束
+                ans&#x3D;max(ans,min(r2[i][m]-r2[i][j]+c2[i][j],r5[i][m]-r5[i][j]+c5[i][j]));
+                &#x2F;&#x2F;右---&gt;下方结束
+                ans&#x3D;max(ans,min(r2[i][m]-r2[i][j]+c2[n][j]-c2[i-1][j],r5[i][m]-r5[i][j]+c5[n][j]-c5[i-1][j]));
             &#125;
         &#125;
         return ans;
     &#125;
-&#125;;
-</code></pre>
+&#125;;</code></pre>
 <h3 id="四、相邻字符不同的最长路径"><a href="#四、相邻字符不同的最长路径" class="headerlink" title="四、相邻字符不同的最长路径"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-path-with-different-adjacent-characters/">四、相邻字符不同的最长路径</a></h3><h4 id="题解：树的直径（树形dp）"><a href="#题解：树的直径（树形dp）" class="headerlink" title="题解：树的直径（树形dp）"></a>题解：树的直径（树形dp）</h4><p>题目需要求任意相邻结点不取相同字符的最长路径，便可转化为：对于每一个结点，以该结点为根节点，在满足题意的情况下求子树的直径。然后不断回溯，从而求出整棵树在满足题意情况下的最长直径。</p>
 <p>通过dfs遍历即可。</p>
 <p>注意：需要将如：字符串、存储图（树）的二维数组等比较大的变量作为全局变量<del>（别问怎么知道的…）</del></p>
 <p>具体见代码注释。</p>
 <p><strong>C++代码：</strong></p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution &#123;
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp">class Solution &#123;
 public:
-    vector<int> edge[100010];
-    int dis[100010];     //dis[i]：表示以结点i为根结点的最大深度
+    vector&lt;int&gt; edge[100010];
+    int dis[100010];     &#x2F;&#x2F;dis[i]：表示以结点i为根结点的最大深度
     string str;
-    int ans=0;
-    void dfs(int u)&#123;   //找出以当前结点为根节点的最大深度和次大深度
-        int second_dis=0;    //次大深度
-        dis[u]=0;
-        for(int i=0;i<edge[u].size();i++)&#123;
-            int v=edge[u][i];
+    int ans&#x3D;0;
+    void dfs(int u)&#123;   &#x2F;&#x2F;找出以当前结点为根节点的最大深度和次大深度
+        int second_dis&#x3D;0;    &#x2F;&#x2F;次大深度
+        dis[u]&#x3D;0;
+        for(int i&#x3D;0;i&lt;edge[u].size();i++)&#123;
+            int v&#x3D;edge[u][i];
             dfs(v);
-            if(str[u]==str[v]) continue;
-            if(dis[v]>dis[u])&#123;   //求以u结点为根结点的最大深度
-                second_dis=dis[u];
-                dis[u]=dis[v];
+            if(str[u]&#x3D;&#x3D;str[v]) continue;
+            if(dis[v]&gt;dis[u])&#123;   &#x2F;&#x2F;求以u结点为根结点的最大深度
+                second_dis&#x3D;dis[u];
+                dis[u]&#x3D;dis[v];
             &#125;else&#123;
-                second_dis=max(second_dis,dis[v]);   //更新次大深度
+                second_dis&#x3D;max(second_dis,dis[v]);   &#x2F;&#x2F;更新次大深度
             &#125;
         &#125;
-        dis[u]++;   //在上述操作中，并未考虑自身结点也在路径中
-        ans=max(ans,dis[u]+second_dis);
+        dis[u]++;   &#x2F;&#x2F;在上述操作中，并未考虑自身结点也在路径中
+        ans&#x3D;max(ans,dis[u]+second_dis);
     &#125;
-    int longestPath(vector<int>& parent, string s) &#123;
-        int n=parent.size();str=s;
-        for(int i=1;i<n;i++)&#123;
+    int longestPath(vector&lt;int&gt;&amp; parent, string s) &#123;
+        int n&#x3D;parent.size();str&#x3D;s;
+        for(int i&#x3D;1;i&lt;n;i++)&#123;
             edge[parent[i]].push_back(i);
         &#125;
         dfs(0);
-
+        
         return ans;
     &#125;
-&#125;;
-</code></pre>
+&#125;;</code></pre>
 </div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>lb</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://bbstudy.net/weekly-contest-289/" title="LeetCode第289场周赛">http://bbstudy.net/weekly-contest-289/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul><script>document.addEventListener('copy', function (event) {
   const clipboardData = event.clipboardData || window.clipboardData;
   if (!clipboardData) { return; }
@@ -201,7 +197,7 @@ public:
     event.preventDefault();
     clipboardData.setData('text/plain', text + '\n\n本文作者：lb\n本文链接：http://bbstudy.net/weekly-contest-289/\n版权声明：本博客所有文章除特别声明外，均默认采用 CC BY-NC-SA 4.0 许可协议。');
   }
-});</script></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/SoHotLB.github.io/weekly-contest-283/" rel="prev" title="LeetCode第283场周赛"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">LeetCode第283场周赛</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/SoHotLB.github.io/weekly-contest-286/" rel="next" title="LeetCode第286场周赛"><span class="post-nav-text">LeetCode第286场周赛</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> lb</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.7</span></div><div class="live-time"><span>本博客已运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+});</script></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/SoHotLB.github.io/weekly-contest-283/" rel="prev" title="LeetCode第283场周赛"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">LeetCode第283场周赛</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/SoHotLB.github.io/weekly-contest-290/" rel="next" title="LeetCode第290场周赛"><span class="post-nav-text">LeetCode第290场周赛</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> lb</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.7</span></div><div class="live-time"><span>本博客已运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
   setTimeout(blog_live_time, 1000);
   const start = new Date('2021-10-28T12:00:00');
   const now = new Date();

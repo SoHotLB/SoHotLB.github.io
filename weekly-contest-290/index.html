@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.classList.toggle('dark', true)
 })()</script><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><link rel="stylesheet" href="/SoHotLB.github.io/css/prism-material-dark.css" type="text/css"></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+<!-- hexo injector head_end end --><link rel="stylesheet" href="/SoHotLB.github.io/css/prism-one-dark.css" type="text/css"></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
 IconifyProviders = {
   // Empty prefix: overwrite default API provider configuration
   '': {
@@ -55,33 +55,32 @@ IconifyProviders = {
     // Wait for 1 second before switching API hosts
     rotate: 1000,
   },
-};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/SoHotLB.github.io/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/SoHotLB.github.io/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/SoHotLB.github.io/about/" title="lb"><img width="96" loading="lazy" src="/SoHotLB.github.io/images/avatar.jpg" alt="lb"></a><div class="site-author-name"><a href="/SoHotLB.github.io/about/">lb</a></div><span class="site-name">lb's blog</span><sub class="site-subtitle">明天会在哪，勇敢无畏的去闯吧</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/SoHotLB.github.io/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/SoHotLB.github.io/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">40</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">6</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">7</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/SoHotLB" title="GitHub" target="_blank" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:2864939950@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><span class="icon iconify" data-icon="ri:mail-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/jue-ze-83-77/" title="知乎" target="_blank" style="color:#0084FF"><span class="icon iconify" data-icon="ri:zhihu-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode%E7%AC%AC290%E5%9C%BA%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3"><span class="toc-text">LeetCode第290场周赛题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%A4%9A%E4%B8%AA%E6%95%B0%E7%BB%84%E6%B1%82%E4%BA%A4%E9%9B%86"><span class="toc-text">一、多个数组求交集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-text">题解：哈希表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BB%9F%E8%AE%A1%E5%9C%86%E5%86%85%E6%A0%BC%E7%82%B9%E6%95%B0%E7%9B%AE"><span class="toc-text">二、统计圆内格点数目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%EF%BC%9A%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6"><span class="toc-text">题意：简单数学</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BB%9F%E8%AE%A1%E5%8C%85%E5%90%AB%E6%AF%8F%E4%B8%AA%E7%82%B9%E7%9A%84%E7%9F%A9%E5%BD%A2%E6%95%B0%E7%9B%AE"><span class="toc-text">三、统计包含每个点的矩形数目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%8E%92%E5%BA%8F-%E4%BA%8C%E5%88%86"><span class="toc-text">题解：排序+二分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%8A%B1%E6%9C%9F%E5%86%85%E8%8A%B1%E7%9A%84%E6%95%B0%E7%9B%AE"><span class="toc-text">四、花期内花的数目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E8%BD%AC%E6%8D%A2-%E6%8E%92%E5%BA%8F"><span class="toc-text">题解：转换+排序</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://bbstudy.net/SoHotLB.github.io/weekly-contest-290/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="lb"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="lb's blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">LeetCode第290场周赛<a class="post-edit-link" href="https://github.com/SoHotLB/SoHotLB.github.io/tree/master/source/_posts/weekly-contest-290.md" target="_blank" title="编辑" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2022-09-07 21:19:54" itemprop="dateCreated datePublished" datetime="2022-09-07T21:19:54+08:00">2022-09-07</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="修改时间：2022-04-30 16:26:20" itemprop="dateModified" datetime="2022-04-30T16:26:20+08:00">2022-04-30</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">222</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">1m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><span class="icon iconify" data-icon="ri:eye-line"></span> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/SoHotLB.github.io/categories/LeetCode%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3/" style="--text-color:saddlebrown" itemprop="url" rel="index"><span itemprop="text">LeetCode周赛题解</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/SoHotLB.github.io/tags/LeetCode/" style="--text-color:#5298d1"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">LeetCode</span></a><a class="tag-item" href="/SoHotLB.github.io/tags/Algorithm/" style="--text-color:#FF0000"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">Algorithm</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h2 id="LeetCode第290场周赛题解"><a href="#LeetCode第290场周赛题解" class="headerlink" title="LeetCode第290场周赛题解"></a>LeetCode第290场周赛题解</h2><blockquote>
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/SoHotLB.github.io/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/SoHotLB.github.io/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/SoHotLB.github.io/about/" title="lb"><img width="96" loading="lazy" src="/SoHotLB.github.io/images/avatar.jpg" alt="lb"></a><div class="site-author-name"><a href="/SoHotLB.github.io/about/">lb</a></div><span class="site-name">lb's blog</span><sub class="site-subtitle">明天会在哪，勇敢无畏的去闯吧</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/SoHotLB.github.io/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/SoHotLB.github.io/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">40</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">6</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">7</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/SoHotLB" title="GitHub" target="_blank" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:2864939950@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><span class="icon iconify" data-icon="ri:mail-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/jue-ze-83-77/" title="知乎" target="_blank" style="color:#0084FF"><span class="icon iconify" data-icon="ri:zhihu-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode%E7%AC%AC290%E5%9C%BA%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3"><span class="toc-text">LeetCode第290场周赛题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%A4%9A%E4%B8%AA%E6%95%B0%E7%BB%84%E6%B1%82%E4%BA%A4%E9%9B%86"><span class="toc-text">一、多个数组求交集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-text">题解：哈希表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BB%9F%E8%AE%A1%E5%9C%86%E5%86%85%E6%A0%BC%E7%82%B9%E6%95%B0%E7%9B%AE"><span class="toc-text">二、统计圆内格点数目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%EF%BC%9A%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6"><span class="toc-text">题意：简单数学</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BB%9F%E8%AE%A1%E5%8C%85%E5%90%AB%E6%AF%8F%E4%B8%AA%E7%82%B9%E7%9A%84%E7%9F%A9%E5%BD%A2%E6%95%B0%E7%9B%AE"><span class="toc-text">三、统计包含每个点的矩形数目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%8E%92%E5%BA%8F-%E4%BA%8C%E5%88%86"><span class="toc-text">题解：排序+二分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%8A%B1%E6%9C%9F%E5%86%85%E8%8A%B1%E7%9A%84%E6%95%B0%E7%9B%AE"><span class="toc-text">四、花期内花的数目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E8%BD%AC%E6%8D%A2-%E6%8E%92%E5%BA%8F"><span class="toc-text">题解：转换+排序</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://bbstudy.net/SoHotLB.github.io/weekly-contest-290/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="lb"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="lb's blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">LeetCode第290场周赛<a class="post-edit-link" href="https://github.com/SoHotLB/SoHotLB.github.io/tree/master/source/_posts/weekly-contest-290.md" target="_blank" title="编辑" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2022-09-07 21:19:54" itemprop="dateCreated datePublished" datetime="2022-09-07T21:19:54+08:00">2022-09-07</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="修改时间：2022-04-30 16:26:20" itemprop="dateModified" datetime="2022-04-30T16:26:20+08:00">2022-04-30</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">1.3k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">5m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><span class="icon iconify" data-icon="ri:eye-line"></span> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/SoHotLB.github.io/categories/LeetCode%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3/" style="--text-color:saddlebrown" itemprop="url" rel="index"><span itemprop="text">LeetCode周赛题解</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/SoHotLB.github.io/tags/LeetCode/" style="--text-color:#5298d1"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">LeetCode</span></a><a class="tag-item" href="/SoHotLB.github.io/tags/Algorithm/" style="--text-color:#FF0000"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">Algorithm</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h2 id="LeetCode第290场周赛题解"><a href="#LeetCode第290场周赛题解" class="headerlink" title="LeetCode第290场周赛题解"></a>LeetCode第290场周赛题解</h2><blockquote>
 <p>比赛地址：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/weekly-contest-290/">https://leetcode-cn.com/contest/weekly-contest-290/</a></p>
 </blockquote>
 <h3 id="一、多个数组求交集"><a href="#一、多个数组求交集" class="headerlink" title="一、多个数组求交集"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-multiple-arrays/">一、多个数组求交集</a></h3><h4 id="题解：哈希表"><a href="#题解：哈希表" class="headerlink" title="题解：哈希表"></a>题解：哈希表</h4><p>由于题目要求每个元素在nums所有数组中都出现过，并返回它们。于是不妨将所有元素存入与一个哈希表中：key表示nums所有数组中的各个元素，value对应它们在几个数组中出现过</p>
 <p>由于题目说明了nums中所有数组都是由不同正整数组成，所以对于value的处理更加简单了，只需要判断出现过多少次即可。</p>
 <p>如果value等于nums数组的个数则满足题意。由于c++ map自动对key按照从小到大排序，进一步满足题目要求，只需遍历一遍map即可。</p>
 <p><strong>C++代码：</strong></p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution &#123;
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp">class Solution &#123;
 public:
-    vector<int> intersection(vector<vector<int>>& nums) &#123;
-        map<int,int>mp;
-        int n=nums.size();
-        for(int i=0;i<n;i++)&#123;
-            for(int j=0;j<nums[i].size();j++)&#123;
+    vector&lt;int&gt; intersection(vector&lt;vector&lt;int&gt;&gt;&amp; nums) &#123;
+        map&lt;int,int&gt;mp;
+        int n&#x3D;nums.size();
+        for(int i&#x3D;0;i&lt;n;i++)&#123;
+            for(int j&#x3D;0;j&lt;nums[i].size();j++)&#123;
                 mp[nums[i][j]]++;
             &#125;
         &#125;
-        vector<int> ans;
+        vector&lt;int&gt; ans;
         for(auto it:mp)&#123;
-            if(it.second==n)&#123;
+            if(it.second&#x3D;&#x3D;n)&#123;
                 ans.push_back(it.first);
             &#125;
         &#125;
         return ans;
     &#125;
-&#125;;
-</code></pre>
+&#125;;</code></pre>
 <h3 id="二、统计圆内格点数目"><a href="#二、统计圆内格点数目" class="headerlink" title="二、统计圆内格点数目"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-lattice-points-inside-a-circle/">二、统计圆内格点数目</a></h3><h4 id="题意：简单数学"><a href="#题意：简单数学" class="headerlink" title="题意：简单数学"></a>题意：简单数学</h4><p>已知圆心坐标以及半径，只需判断当前点到圆心的距离与半径的大小关系即可：</p>
 <ul>
 <li>到圆心的距离小于等于半径，则在圆内部</li>
@@ -90,85 +89,82 @@ public:
 <p>对于点的遍历，可以直接已圆心为中心点，计算它对应的正方形的所有坐标即可。</p>
 <p>可以用map或set集合存储所有满足条件点的个数。</p>
 <p><strong>C++代码：</strong></p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution &#123;
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp">class Solution &#123;
 public:
-    int countLatticePoints(vector<vector<int>>& circles) &#123;
-        map<pair<int,int>,int> mp;
-        int n=circles.size();
+    int countLatticePoints(vector&lt;vector&lt;int&gt;&gt;&amp; circles) &#123;
+        map&lt;pair&lt;int,int&gt;,int&gt; mp;
+        int n&#x3D;circles.size();
         int x,y,r;
-        pair<int,int> now;
-        for(int i=0;i<n;i++)&#123;
-            x=circles[i][0];y=circles[i][1];r=circles[i][2];
-            for(int xx=x-r;xx<=x+r;xx++)&#123;
-                for(int yy=y-r;yy<=y+r;yy++)&#123;
-                    if((xx-x)*(xx-x)+(yy-y)*(yy-y)>r*r) continue;
-                    now.first=xx;now.second=yy;
+        pair&lt;int,int&gt; now;
+        for(int i&#x3D;0;i&lt;n;i++)&#123;
+            x&#x3D;circles[i][0];y&#x3D;circles[i][1];r&#x3D;circles[i][2];
+            for(int xx&#x3D;x-r;xx&lt;&#x3D;x+r;xx++)&#123;
+                for(int yy&#x3D;y-r;yy&lt;&#x3D;y+r;yy++)&#123;
+                    if((xx-x)*(xx-x)+(yy-y)*(yy-y)&gt;r*r) continue;
+                    now.first&#x3D;xx;now.second&#x3D;yy;
                     mp[now]++;
                 &#125;
             &#125;
         &#125;
         return mp.size();
     &#125;
-&#125;;
-</code></pre>
+&#125;;</code></pre>
 <h3 id="三、统计包含每个点的矩形数目"><a href="#三、统计包含每个点的矩形数目" class="headerlink" title="三、统计包含每个点的矩形数目"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-number-of-rectangles-containing-each-point/">三、统计包含每个点的矩形数目</a></h3><h4 id="题解：排序-二分"><a href="#题解：排序-二分" class="headerlink" title="题解：排序+二分"></a>题解：排序+二分</h4><p>给定若干个矩形，矩形的坐标为：左下角均在二维坐标系原点位置，给定右上角的坐标。然后给出若干点的坐标，判断每个点被多少个矩形所包含，返回一个整数数组即可。</p>
 <p>由于题目给定y坐标最大为100，于是考虑对y坐标进行存储，第二维则存储纵坐标相同情况下，所有的点横坐标的信息。</p>
 <p>然后对横坐标进行排序。遍历所有的点，假设当前遍历的点的纵坐标为y，由于y最大为100，直接暴力枚举$j(y&lt;=j&lt;=100)$，再求出所有矩形右上角纵坐标坐标为j时，横坐标大于等于当前遍历的点的横坐标x的矩形个数（二分查找，直接暴力查找会超时）。具体见代码：</p>
 <p><strong>C++代码：</strong></p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution &#123;
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp">class Solution &#123;
 public:
-    vector<int> countRectangles(vector<vector<int>>& rectangles, vector<vector<int>>& points) &#123;
-        int n=points.size();
-        //存储所有的坐标，纵坐标为第一维，横坐标为第二维，即存储纵坐标对应的对应的所有横坐标集合
-        //y最大为100
-        vector<vector<int> > a(110);
+    vector&lt;int&gt; countRectangles(vector&lt;vector&lt;int&gt;&gt;&amp; rectangles, vector&lt;vector&lt;int&gt;&gt;&amp; points) &#123;
+        int n&#x3D;points.size();
+        &#x2F;&#x2F;存储所有的坐标，纵坐标为第一维，横坐标为第二维，即存储纵坐标对应的对应的所有横坐标集合
+        &#x2F;&#x2F;y最大为100
+        vector&lt;vector&lt;int&gt; &gt; a(110);
         for(auto arr:rectangles)&#123;
             a[arr[1]].push_back(arr[0]);
         &#125;
-        //对相同纵坐标的横坐标按照从小到大排序
-        for(int i=1;i<=100;i++) sort(a[i].begin(),a[i].end());
-        vector<int> ans(n);
+        &#x2F;&#x2F;对相同纵坐标的横坐标按照从小到大排序
+        for(int i&#x3D;1;i&lt;&#x3D;100;i++) sort(a[i].begin(),a[i].end());
+        vector&lt;int&gt; ans(n);
         int x,y;
-        for(int i=0;i<n;i++)&#123;
-            x=points[i][0];y=points[i][1];
-            //首先满足矩形的高度大于等于纵坐标
-            for(int j=y;j<=100;j++)&#123;
-                if(a[j].size()>0)&#123;
-                    //二分查找第一个大于等于当前横坐标的索引
-                    ans[i]+=a[j].size()-(lower_bound(a[j].begin(),a[j].end(),x)-a[j].begin());
+        for(int i&#x3D;0;i&lt;n;i++)&#123;
+            x&#x3D;points[i][0];y&#x3D;points[i][1];
+            &#x2F;&#x2F;首先满足矩形的高度大于等于纵坐标
+            for(int j&#x3D;y;j&lt;&#x3D;100;j++)&#123;
+                if(a[j].size()&gt;0)&#123;
+                    &#x2F;&#x2F;二分查找第一个大于等于当前横坐标的索引
+                    ans[i]+&#x3D;a[j].size()-(lower_bound(a[j].begin(),a[j].end(),x)-a[j].begin());
                 &#125;
             &#125;
         &#125;
         return ans;
     &#125;
-&#125;;
-</code></pre>
+&#125;;</code></pre>
 <h3 id="四、花期内花的数目"><a href="#四、花期内花的数目" class="headerlink" title="四、花期内花的数目"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-flowers-in-full-bloom/">四、花期内花的数目</a></h3><h4 id="题解：转换-排序"><a href="#题解：转换-排序" class="headerlink" title="题解：转换+排序"></a>题解：转换+排序</h4><p>需要求每个人到达时能看到花的个数，直接转换为：花期开始时间小于等于当前时间花的个数  -  花期结束时间大于等于当前时间花的个数。</p>
 <p>为了方便查找，直接存储所有花开始的时间和结束的时间，然后排序即可。</p>
 <p><strong>C++代码：</strong></p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution &#123;
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp">class Solution &#123;
 public:
-    vector<int> fullBloomFlowers(vector<vector<int>>& flowers, vector<int>& persons) &#123;
-        int n=persons.size();
-        int m=flowers.size();
-        vector<int> ans(n);
+    vector&lt;int&gt; fullBloomFlowers(vector&lt;vector&lt;int&gt;&gt;&amp; flowers, vector&lt;int&gt;&amp; persons) &#123;
+        int n&#x3D;persons.size();
+        int m&#x3D;flowers.size();
+        vector&lt;int&gt; ans(n);
 
-        //记录每朵花开始的时间和结束的时间
-        vector<int> stime;vector<int> etime;
+        &#x2F;&#x2F;记录每朵花开始的时间和结束的时间
+        vector&lt;int&gt; stime;vector&lt;int&gt; etime;
         for(auto x:flowers)&#123;
             stime.push_back(x[0]);
             etime.push_back(x[1]);
         &#125;
         sort(stime.begin(),stime.end());
         sort(etime.begin(),etime.end());
-        for(int i=0;i<n;i++)&#123;
-            //当前时间>=花期开始的时间的花的个数  - 当前时间<=花期结束的时间花的个数
-            ans[i]=(upper_bound(stime.begin(),stime.end(),persons[i])-stime.begin())-(lower_bound(etime.begin(),etime.end(),persons[i])-etime.begin());
+        for(int i&#x3D;0;i&lt;n;i++)&#123;
+            &#x2F;&#x2F;当前时间&gt;&#x3D;花期开始的时间的花的个数  - 当前时间&lt;&#x3D;花期结束的时间花的个数
+            ans[i]&#x3D;(upper_bound(stime.begin(),stime.end(),persons[i])-stime.begin())-(lower_bound(etime.begin(),etime.end(),persons[i])-etime.begin());
         &#125;
         return ans;
     &#125;
-&#125;;
-</code></pre>
+&#125;;</code></pre>
 </div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>lb</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://bbstudy.net/weekly-contest-290/" title="LeetCode第290场周赛">http://bbstudy.net/weekly-contest-290/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul><script>document.addEventListener('copy', function (event) {
   const clipboardData = event.clipboardData || window.clipboardData;
   if (!clipboardData) { return; }
@@ -177,7 +173,7 @@ public:
     event.preventDefault();
     clipboardData.setData('text/plain', text + '\n\n本文作者：lb\n本文链接：http://bbstudy.net/weekly-contest-290/\n版权声明：本博客所有文章除特别声明外，均默认采用 CC BY-NC-SA 4.0 许可协议。');
   }
-});</script></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/SoHotLB.github.io/weekly-contest-286/" rel="prev" title="LeetCode第286场周赛"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">LeetCode第286场周赛</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/SoHotLB.github.io/weekly-contest-267/" rel="next" title="LeetCode第267场周赛"><span class="post-nav-text">LeetCode第267场周赛</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> lb</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.7</span></div><div class="live-time"><span>本博客已运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+});</script></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/SoHotLB.github.io/weekly-contest-289/" rel="prev" title="LeetCode第289场周赛"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">LeetCode第289场周赛</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/SoHotLB.github.io/weekly-contest-286/" rel="next" title="LeetCode第286场周赛"><span class="post-nav-text">LeetCode第286场周赛</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> lb</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.7</span></div><div class="live-time"><span>本博客已运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
   setTimeout(blog_live_time, 1000);
   const start = new Date('2021-10-28T12:00:00');
   const now = new Date();
