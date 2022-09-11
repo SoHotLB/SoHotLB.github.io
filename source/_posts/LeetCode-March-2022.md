@@ -1,13 +1,11 @@
 ---
 title: LeetCode2022年每日一题3月打卡汇总
-categories: 'LeetCode每日一题打卡'
+categories: 'LeetCode每日一题'
 tags: 
   - LeetCode
   - Algorithm
 katex: true
-
 ---
-
 ## LeetCode2022年每日一题3月打卡汇总
 
 ### [3.1：Z 字形变换](https://leetcode-cn.com/problems/zigzag-conversion/)
@@ -380,9 +378,9 @@ public:
 
 我们定义：i<j，如果nums[i]==nums[j]，则逻辑上我们认为nums[i]<nums[j]（因为i<j）。进行此定义为了方便处理单调栈。
 
-题目所求为：所有子数组范围（子数组最大值-最小值）和。可以转化为<font color="#ff0000">**所有子数组的最大值的和-所有子数组最小值和**</font>。
+题目所求为：所有子数组范围（子数组最大值-最小值）和。可以转化为`<font color="#ff0000">`**所有子数组的最大值的和-所有子数组最小值和**`</font>`。
 
-假设nums[j]左边第一个比它小的元素为nums[i]，nums[j]右边第一个比它小的元素为nums[k]。则所有子数组中以nums[i]为最小值的个数为$(j-i) * (k-j)$。如何获得nums[j]左边和右边第一个比它小的元素的下标呢， <font color="#ff0000">单调栈</font>刚好可以处理，预处理数组minL，minR。其中minL[i]表示nums[i]左边第一个比它小的元素的下标，minR[i]表示nums[i]右边第一个比它小的元素的下标。
+假设nums[j]左边第一个比它小的元素为nums[i]，nums[j]右边第一个比它小的元素为nums[k]。则所有子数组中以nums[i]为最小值的个数为$(j-i) * (k-j)$。如何获得nums[j]左边和右边第一个比它小的元素的下标呢， `<font color="#ff0000">`单调栈`</font>`刚好可以处理，预处理数组minL，minR。其中minL[i]表示nums[i]左边第一个比它小的元素的下标，minR[i]表示nums[i]右边第一个比它小的元素的下标。
 
 > 单调栈的一个例子：
 >
@@ -835,12 +833,12 @@ class Solution {
 
 #### 题意：
 
-给定一个字符串数组，含有`*`和`|`两个字符，分别表示盘子和蜡烛。现给出一个询问数组，每个元素给定一个区间`[l,r]`，需要求得该区间中两支蜡烛之间的最大盘子数量
+给定一个字符串数组，含有 `*`和 `|`两个字符，分别表示盘子和蜡烛。现给出一个询问数组，每个元素给定一个区间 `[l,r]`，需要求得该区间中两支蜡烛之间的最大盘子数量
 
 其中：
 
 - $3 <= s.length <= 10^5$
-- $s 只包含字符 '*' 和 '|'$ 
+- $s 只包含字符 '*' 和 '|'$
 - $1 <= queries.length <= 10^5$
 - $queries[i].length == 2$
 - $0 <= left_i <= right_i < s.length$
@@ -1575,7 +1573,7 @@ class Solution {
 **提示：**
 
 - 1 <= list1.length, list2.length <= 1000
-- 1 <= list1[i].length, list2[i].length <= 30 
+- 1 <= list1[i].length, list2[i].length <= 30
 - list1[i] 和 list2[i] 由空格 ' ' 和英文字母组成。
 - list1 的所有字符串都是 唯一 的。
 - list2 中的所有字符串都是 唯一 的。
@@ -2282,4 +2280,3 @@ public:
     }
 };
 ```
-

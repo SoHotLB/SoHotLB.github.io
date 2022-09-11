@@ -1,10 +1,12 @@
 mode: auto
 
 avatar:
+  # url: http://lbbuket-blog.oss-cn-hangzhou.aliyuncs.com/blog-img/avatar-2022-09-10-22-34-11.jpg
   url: /images/avatar.jpg
-
+  
 cdn:
-  pre: https://cdn.jsdelivr.net/gh/SoHotLB/SoHotLB.github.io@main
+  # pre: https://cdn.jsdelivr.net/gh/SoHotLB/SoHotLB.github.io@main
+  pre: ''
   css:
   js:
     base:
@@ -12,7 +14,7 @@ cdn:
       # 默认引入的图标资源，使用 iconfont
       iconfont: //at.alicdn.com/t/font_1140697_dxory92pb0h.js
     defer:
- 
+
 reward:
   enable: false
   comment: 我很可爱，请给我钱
@@ -81,14 +83,13 @@ banner:
     - 的
     - 博
     - 客
-  src: /js/ui/banner.js
   border: true
   cloud:
     enable: true
     color: "white"
   go_down:
     enable: true
-    icon: icon-arrow-down-s-line
+    icon: ri:arrow-down-s-line
 
 
 
@@ -96,11 +97,11 @@ banner:
 footer:
   since: 2021
   icon:
-    name: icon-cloud-line
+    name: ri:cloud-line
     animated: true
     color: "#0078E7"
   powered:
-    enable: false
+    enable: true
   live_time:
     enable: true
     prefix: 本博客已运行
@@ -108,12 +109,12 @@ footer:
     start_time: "2021-10-28T12:00:00"
 
 # 引擎搜索
-engine_search:
-  enable: true
-  href: "https://www.google.com/search?q=site:"
-  # href: "https://www.baidu.com/s?wd=site:"
-  # href: "https://www.bing.com/search?q=site:"
-  domain: bbstudy.net
+# engine_search:
+#   enable: false
+#   href: "https://www.google.com/search?q=site:"
+#   # href: "https://www.baidu.com/s?wd=site:"
+#   # href: "https://www.bing.com/search?q=site:"
+#   domain: bbstudy.net
 
 # search 本地搜索
 # https://github.com/wzpan/hexo-generator-search
@@ -128,17 +129,28 @@ algolia_search:
   enable: true
   # ...
 
-google_analytics:
+# 网站计数器
+busuanzi:
   enable: true
-  id: G-1LL0D86CY9
+  # 是否显示站点用户访问量 Unique Visitor（_icon 为对应图标，以下同理）
+  site_uv: true            
+  site_uv_icon: ri:user-line
+  # 是否显示站点页面访问量 Page View
+  site_pv: true
+  site_pv_icon: ri:eye-line
+  # 是否显示文章页面访问量 Page View
+  page_pv: true
+  page_pv_icon: ri:eye-line
+
+
+
+# google_analytics:
+#   enable: true
+#   id: G-1LL0D86CY9
 
 google_adsense:
   enable: true
   client: ca-pub-2245427233262012
-
-# post_edit:
-#   enable: true
-#   url: https://github.com/YunYouJun/yunyoujun.github.io/tree/hexo/source/
 
 albums:
   enable: true
@@ -164,11 +176,10 @@ tags:
   
 categories:
   可视化学习笔记: dimgray
-  LeetCode: orange
-  动画: crimson
-  漫画: orange
-  Parcel: '#21374b'
-  学习: saddlebrown
+  LeetCode每日一题: orange
+  机器学习: crimson
+  个人总结: orange
+  LeetCode周赛题解: saddlebrown
   MAD: crimson
   教程: royalblue
   笔记: dimgray
@@ -186,21 +197,21 @@ pages:
 menu:
   home:
     path: /
-    icon: icon-home-4-line
+    icon: ri:home-4-line
   list:
     - type: archives
       path: /archives/
-      icon: icon-archive-line
+      icon: ri:archive-line
     - type: categories
       path: /categories/
-      icon: icon-folder-2-line
+      icon: ri:folder-2-line
     - type: tags
       path: /tags/
-      icon: icon-price-tag-3-line
+      icon: ri:price-tag-3-line
   custom:
     title: 文档
     path: https://yun.yunyoujun.cn
-    icon: icon-settings-line
+    icon: ri:clipboard-line
 
 # 鼠标
 cursor:
@@ -216,11 +227,17 @@ google_tagmanager:
   enable: true
   id: GTM-M9KWR9L
 
-# 词云
+# 字数统计
 wordcount:
-  enable: false
+  enable: true
   count: true
   time: true
+
+# 词云
+wordcloud:
+  enable: true
+  height: 350
+
 
 # 随机在网页主页上显示一句话
 say:
@@ -236,15 +253,15 @@ say:
 social:
   - name: GitHub
     link: https://github.com/SoHotLB
-    icon: icon-github-line
+    icon: ri:github-line
     color: "#181717"
   - name: E-Mail
     link: mailto:2864939950@qq.com
-    icon: icon-mail-line
+    icon: ri:mail-line
     color: "#8E71C1"
   - name: 知乎
     link: https://www.zhihu.com/people/jue-ze-83-77/
-    icon: icon-zhihu-line
+    icon: ri:zhihu-line
     color: "#0084FF"
 
 # 开启公告，每篇文章都可以显示
@@ -263,8 +280,8 @@ post_meta:
   tags: true
 
 post_edit:
-  enable: false
-  url: https://github.com/SoHotLB/SoHotLB.github.io/tree/hexo/source/
+  enable: true
+  url: https://github.com/SoHotLB/SoHotLB.github.io/tree/master/source/
 
 # 目录
 toc:
@@ -281,11 +298,11 @@ toc:
 #   cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # 复制代码
-codeblock:
-  copy_btn: true
-  prismjs:
-    light: default
-    dark: tomorrow
+# codeblock:
+#   copy_btn: true
+#   prismjs:
+#     light: default
+#     dark: tomorrow
 
 # 版权
 creative_commons:
@@ -293,6 +310,42 @@ creative_commons:
   post: true
   language: deed.zh
   clipboard: true
+
+types:
+  link:
+    color: blue
+    icon: ri:external-link-line
+  bilibili:
+    color: '#FF8EB3'
+    icon: ri:bilibili-line
+  douban:
+    color: '#007722'
+    icon: ri:douban-line
+  github:
+    color: black
+    icon: ri:github-line
+  netease-cloud-music:
+    color: '#C10D0C'
+    icon: ri:netease-cloud-music-line
+  notion:
+    color: black
+    icon: ri:notion
+  twitter:
+    color: '#1da1f2'
+    icon: ri:twitter-line
+  wechat:
+    color: '#1AAD19'
+    icon: ri:wechat-2-line
+  weibo:
+    color: '#E6162D'
+    icon: ri:weibo-line
+  yuque:
+    color: '#25b864'
+    icon: ant-design:yuque-outlined
+  zhihu:
+    color: '#0084FF'
+    icon: ri:zhihu-line
+
 
 # 默哀功能
 mourn:

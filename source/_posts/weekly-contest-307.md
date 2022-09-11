@@ -6,10 +6,11 @@ tags:
   - Algorithm
 katex: true
 ---
-
 ## LeetCode第307场周赛题解
 
 > 比赛地址：https://leetcode.cn/contest/weekly-contest-307/
+
+<!-- more -->
 
 ### 一、[赢得比赛需要的最少训练时长](https://leetcode.cn/problems/minimum-hours-of-training-to-win-a-competition/)
 
@@ -29,7 +30,7 @@ katex: true
 
 **示例1：**
 
-```
+```md
 输入：initialEnergy = 5, initialExperience = 3, energy = [1,4,3,2], experience = [2,6,3,1]
 输出：8
 解释：在 6 小时训练后，你可以将精力提高到 11 ，并且再训练 2 个小时将经验提高到 5 。
@@ -48,7 +49,7 @@ katex: true
 
 **示例2：**
 
-```
+```md
 输入：initialEnergy = 2, initialExperience = 4, energy = [1], experience = [3]
 输出：0
 解释：你不需要额外的精力和经验就可以赢得比赛，所以返回 0 。
@@ -154,7 +155,7 @@ public:
                 ans+=str;
                 if(flag) flag=false;
             }
-            
+          
             cnt[i]-=(cnt[i]/2)*2;
         }
         string s=ans;
@@ -186,7 +187,7 @@ public:
 
 **示例1：**
 
-![img](E:\blog\source\_posts\weekly-contest-307.assets\image-20220625231744-1.png)
+![image-20220625231744-1-2022-09-11-19-51-26](http://lbbuket-blog.oss-cn-hangzhou.aliyuncs.com/blog-img/image-20220625231744-1-2022-09-11-19-51-26.png/resize80)
 
 ```
 输入：root = [1,5,3,null,4,10,6,9,2], start = 3
@@ -315,4 +316,3 @@ public:
     }   
 };
 ```
-

@@ -1,13 +1,11 @@
 ---
 title: LeetCode2022年每日一题4月打卡汇总
-categories: 'LeetCode每日一题打卡'
+categories: 'LeetCode每日一题'
 tags: 
   - LeetCode
   - Algorithm
 katex: true
-
 ---
-
 ## LeetCode2022年每日一题4月打卡汇总
 
 > 点击题目即可跳转至LeetCode题目
@@ -188,11 +186,12 @@ public:
 
 - n=0时：$0<=x<1$，满足条件个数为：1个
 - n=1时：$0<=x<10$，满足条件个数为：0~9，10个
-
 - n=2时：$0<=x<100$，可以由两部分构成：只有一位数的情况和两位数的情况。其中
+
   - 只有一位数的情况由上述可得x有10种；
   - 有两位数的情况：第一位可以取1~9（9种）， 第二位可以取0~9除了和第一位不同的数字（9种），于是就有：9*9=81种。
 - n=3时，可以分为三部分：一位数、两位数、三位数
+
   - 一位数：10种（0~9）
   - 两位数：9*9=81种
   - 三位数：9\*9\*8
@@ -283,14 +282,14 @@ public:
         mp.clear();num.clear();
         srand(time(0));   //随机数种子
     }
-    
+  
     bool insert(int val) {
         if(mp.count(val)) return false;
         num.push_back(val);
         mp[val]=num.size()-1;
         return true;
     }
-    
+  
     bool remove(int val) {
         if(!mp.count(val)) return false;
         //将num数组中最后一个元素填入到此位置
@@ -302,7 +301,7 @@ public:
         num.pop_back();mp.erase(val);
         return true;
     }
-    
+  
     int getRandom() {
         int pos=rand()%num.size();
         return num[pos];
@@ -328,14 +327,14 @@ class RandomizedSet {
         map=new HashMap<Integer,Integer>();
         num=new ArrayList<>();
     }
-    
+  
     public boolean insert(int val) {
         if(map.containsKey(val)) return false;
         num.add(val);
         map.put(val,num.size()-1);
         return true;
     }
-    
+  
     public boolean remove(int val) {
         if(!map.containsKey(val)) return false;
         //将num最后一个元素移动至当前位置
@@ -348,7 +347,7 @@ class RandomizedSet {
         map.remove(val);
         return true;
     }
-    
+  
     public int getRandom() {
         Random rand=new Random();
     	int index=rand.nextInt(num.size());
@@ -493,7 +492,7 @@ public:
             while(num){
                 p=p*10+num%10;num/=10;
             }
-            
+          
             //遍历它的因子
             for(long long j=pow(10,n)-1;j*j>=p;j--){
                 if(p%j==0&&(j>pow(10,n-1))){
@@ -850,7 +849,7 @@ public:
             mp[nums[i]].push_back(i);
         }
     }
-    
+  
     int pick(int target) {
         int n=mp[target].size();
         return mp[target][rand()%n];
@@ -863,4 +862,3 @@ public:
  * int param_1 = obj->pick(target);
  */
 ```
-

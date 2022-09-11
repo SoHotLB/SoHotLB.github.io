@@ -1,18 +1,16 @@
 ---
 title: LeetCode2022年每日一题1月打卡汇总
-categories: 'LeetCode每日一题打卡'
+categories: 'LeetCode每日一题'
 tags: 
   - LeetCode
   - Algorithm
 katex: true
-
 ---
-
 ## LeetCode2022年每日一题1月打卡汇总
 
 ### [1.14：查找和最小的K对数字](https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/)
 
-####  **题意**
+#### **题意**
 
 给定两个以 升序排列 的整数数组 $nums1$ 和 $nums2$ , 以及一个整数 $k$ 。
 
@@ -27,18 +25,18 @@ katex: true
 > 输入: nums1 = [1,7,11], nums2 = [2,4,6], k = 3
 > 输出: [1,2],[1,4],[1,6]
 > 解释: 返回序列中的前 3 对数：
->      [1,2],[1,4],[1,6],[7,2],[7,4],[11,2],[7,6],[11,4],[11,6]
+> [1,2],[1,4],[1,6],[7,2],[7,4],[11,2],[7,6],[11,4],[11,6]
 
 **示例2：**
 
 > 输入: nums1 = [1,1,2], nums2 = [1,2,3], k = 2
 > 输出: [1,1],[1,1]
 > 解释: 返回序列中的前 2 对数：
->      [1,1],[1,1],[1,2],[2,1],[1,2],[2,2],[1,3],[1,3],[2,3]
+> [1,1],[1,1],[1,2],[2,1],[1,2],[2,2],[1,3],[1,3],[2,3]
 
 **示例3：**
 
-> 输入: nums1 = [1,2], nums2 = [3], k = 3 
+> 输入: nums1 = [1,2], nums2 = [3], k = 3
 > 输出: [1,3],[2,3]
 > 解释: 也可能序列中所有的数对都被返回:[1,3],[2,3]
 
@@ -83,7 +81,7 @@ public:
         for(int i=0;i<n;i++) a.push_back(nums1[i]);
         for(int i=0;i<m;i++) b.push_back(nums2[i]);
         vector<vector<int> >ans;
-        
+      
         //定义优先队列，存储两数组元素下标
         priority_queue<node> q;
         //先nums1所有的下标入队
@@ -113,7 +111,7 @@ class Solution {
     public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
 		//返回值
         List<List<Integer>> ans=new ArrayList<>();
-        
+      
         //定义优先队列存储两数组下标
         PriorityQueue<int[]> q=new PriorityQueue<>((a,b) ->
         		nums1[a[0]]+nums2[a[1]]-(nums1[b[0]]+nums2[b[1]])); 
@@ -128,7 +126,7 @@ class Solution {
         	List now=new ArrayList<>();
         	now.add(nums1[a[0]]);now.add(nums2[a[1]]);
         	ans.add(now);
-        	
+      
         	//nums2数组下标右移，然后继续入队
         	if(++a[1]<nums2.length)
         		q.add(a);
@@ -160,14 +158,12 @@ Hercy 想要为购买第一辆车存钱。他 每天 都往力扣银行里存钱
 > 输入：n = 10
 > 输出：37
 > 解释：第 10 天后，总额为 (1 + 2 + 3 + 4 + 5 + 6 + 7) + (2 + 3 + 4) = 37 。注意到第二个星期一，Hercy 存入 2 块钱。
->
 
 **示例3：**
 
 > 输入：n = 20
 > 输出：96
 > 解释：第 20 天后，总额为 (1 + 2 + 3 + 4 + 5 + 6 + 7) + (2 + 3 + 4 + 5 + 6 + 7 + 8) + (3 + 4 + 5 + 6 + 7 + 8) = 96 。
->
 
 **提示：**
 
@@ -266,7 +262,7 @@ public:
             head=head->next;
         }
     }
-    
+  
     int getRandom() {
         return ve[rand()%ve.size()];
     }
@@ -301,7 +297,7 @@ class Solution {
             head=head.next;
         }
     }
-    
+  
     public int getRandom() {
         return list.get(new Random().nextInt(list.size()));
     }
@@ -344,7 +340,6 @@ class Solution {
 > 输入：n = 2
 > 输出：10
 > 解释：所有可能的字符串分别是："ae", "ea", "ei", "ia", "ie", "io", "iu", "oi", "ou" 和 "ua"。
->
 
 **示例3：**
 
@@ -450,7 +445,7 @@ class Solution {
 
 首先需要注意的是，因为是24小时制，所以最大的差为：12:00——0:00（即12*60=720min）。
 
-我们先将所有的时间转化为分钟，若两者的时间差超过了720min（如示例1中$23*60+59-0min$ 明显大于了720则表示应该往后计算，即： ![](https://gitee.com/serendipity_LB/img/raw/master/image-20220118145723933.png)<img src="" alt="image-20220118145723933" style="zoom: 80%;" />
+我们先将所有的时间转化为分钟，若两者的时间差超过了720min（如示例1中$23*60+59-0min$ 明显大于了720则表示应该往后计算，即： ![](https://gitee.com/serendipity_LB/img/raw/master/image-20220118145723933.png)`<img src="" alt="image-20220118145723933" style="zoom: 80%;" />`
 
 于是便可将所有的时间存储到一个数组中，然后按照时间从小到大排序，再两两之间求和。
 
@@ -771,7 +766,6 @@ public:
 > 输入：arr = [100,-23,-23,404,100,23,23,23,3,404]
 > 输出：3
 > 解释：那你需要跳跃 3 次，下标依次为 0 --> 4 --> 3 --> 9 。下标 9 为数组的最后一个元素的下标。
->
 
 **示例2：**
 
@@ -901,14 +895,14 @@ class Solution {
 
 > 输入：s = "abb"
 > 输出：2
-> 解释："abb" -> "bb" -> "". 
+> 解释："abb" -> "bb" -> "".
 > 先删除回文子序列 "a"，然后再删除 "bb"。
 
 **示例2：**
 
 > 输入：s = "baabb"
 > 输出：2
-> 解释："baabb" -> "b" -> "". 
+> 解释："baabb" -> "b" -> "".
 > 先删除回文子序列 "baab"，然后再删除 "b"。
 
 **提示：**
@@ -998,7 +992,7 @@ public:
     StockPrice() {
         set.clear();mp.clear();cur=0;
     }
-    
+  
     void update(int timestamp, int price) {
         if(cur<=timestamp){
             cur=timestamp;curPrice=price;
@@ -1013,15 +1007,15 @@ public:
         }
         set.emplace(price);
     }
-    
+  
     int current() {
         return curPrice;
     }
-    
+  
     int maximum() {
         return *set.rbegin();
     }
-    
+  
     int minimum() {
         return *set.begin();
     }
@@ -1036,8 +1030,6 @@ public:
  * int param_4 = obj->minimum();
  */
 ```
-
-
 
 **Java代码：**
 
@@ -1112,7 +1104,7 @@ class StockPrice {
 
 **示例1：**
 
-<img src="https://assets.leetcode.com/uploads/2021/09/29/e1.png" alt="img" style="zoom: 50%;" /><img src="https://assets.leetcode.com/uploads/2021/09/29/e2.png" alt="img" style="zoom: 50%;" />  
+<img src="https://assets.leetcode.com/uploads/2021/09/29/e1.png" alt="img" style="zoom: 50%;" /><img src="https://assets.leetcode.com/uploads/2021/09/29/e2.png" alt="img" style="zoom: 50%;" />
 
 > 输入：n = 5, edges = [[1,2],[1,3],[1,4],[3,4],[4,5]], time = 3, change = 5
 > 输出：13
@@ -1120,19 +1112,20 @@ class StockPrice {
 > 上面的左图展现了给出的城市交通图。
 > 右图中的蓝色路径是最短时间路径。
 > 花费的时间是：
+>
 > - 从节点 1 开始，总花费时间=0
 > - 1 -> 4：3 分钟，总花费时间=3
 > - 4 -> 5：3 分钟，总花费时间=6
-> 因此需要的最小时间是 6 分钟。
+>   因此需要的最小时间是 6 分钟。
 >
 > 右图中的红色路径是第二短时间路径。
+>
 > - 从节点 1 开始，总花费时间=0
 > - 1 -> 3：3 分钟，总花费时间=3
 > - 3 -> 4：3 分钟，总花费时间=6
 > - 在节点 4 等待 4 分钟，总花费时间=10
 > - 4 -> 5：3 分钟，总花费时间=13
-> 因此第二短时间是 13 分钟。   
->
+>   因此第二短时间是 13 分钟。
 
 #### 题解：dijkstra & bfs
 
@@ -1157,23 +1150,23 @@ class StockPrice {
 > 输入：n = 7
 > 输出：6
 > 解释：比赛详情：
+>
 > - 第 1 轮：队伍数 = 7 ，配对次数 = 3 ，4 支队伍晋级。
 > - 第 2 轮：队伍数 = 4 ，配对次数 = 2 ，2 支队伍晋级。
 > - 第 3 轮：队伍数 = 2 ，配对次数 = 1 ，决出 1 支获胜队伍。
-> 总配对次数 = 3 + 2 + 1 = 6
->
+>   总配对次数 = 3 + 2 + 1 = 6
 
 **示例2：**
 
 > 输入：n = 14
 > 输出：13
 > 解释：比赛详情：
+>
 > - 第 1 轮：队伍数 = 14 ，配对次数 = 7 ，7 支队伍晋级。
-> - 第 2 轮：队伍数 = 7 ，配对次数 = 3 ，4 支队伍晋级。 
+> - 第 2 轮：队伍数 = 7 ，配对次数 = 3 ，4 支队伍晋级。
 > - 第 3 轮：队伍数 = 4 ，配对次数 = 2 ，2 支队伍晋级。
 > - 第 4 轮：队伍数 = 2 ，配对次数 = 1 ，决出 1 支获胜队伍。
-> 总配对次数 = 7 + 3 + 2 + 1 = 13
->
+>   总配对次数 = 7 + 3 + 2 + 1 = 13
 
 #### 题解：模拟
 
@@ -1193,8 +1186,6 @@ public:
     }
 };
 ```
-
-
 
 ### [1.27：句子中的有效单词数](https://leetcode-cn.com/problems/number-of-valid-words-in-a-sentence/)
 
@@ -1230,7 +1221,6 @@ public:
 > 解释：句子中没有有效单词
 > "!this" 不是有效单词，因为它以一个标点开头
 > "1-s" 和 "b8d" 也不是有效单词，因为它们都包含数字
->
 
 **示例3：**
 
@@ -1238,7 +1228,6 @@ public:
 > 输出：5
 > 解释：句子中的有效单词是 "alice"、"and"、"bob"、"are" 和 "playing"
 > "stone-game10" 不是有效单词，因为它含有数字
->
 
 **示例4：**
 
@@ -1343,4 +1332,3 @@ class Solution {
 	}
 }
 ```
-
