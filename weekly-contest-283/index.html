@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.classList.toggle('dark', true)
 })()</script><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+<!-- hexo injector head_end end --><link rel="stylesheet" href="/SoHotLB.github.io/css/prism-material-dark.css" type="text/css"></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
 IconifyProviders = {
   // Empty prefix: overwrite default API provider configuration
   '': {
@@ -60,7 +60,7 @@ IconifyProviders = {
     // Wait for 1 second before switching API hosts
     rotate: 1000,
   },
-};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/SoHotLB.github.io/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/SoHotLB.github.io/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/SoHotLB.github.io/about/" title="lb"><img width="96" loading="lazy" src="/SoHotLB.github.io/images/avatar.jpg" alt="lb"></a><div class="site-author-name"><a href="/SoHotLB.github.io/about/">lb</a></div><span class="site-name">lb's blog</span><sub class="site-subtitle">明天会在哪，勇敢无畏的去闯吧</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/SoHotLB.github.io/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/SoHotLB.github.io/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">40</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">6</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">7</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/SoHotLB" title="GitHub" target="_blank" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:2864939950@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><span class="icon iconify" data-icon="ri:mail-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/jue-ze-83-77/" title="知乎" target="_blank" style="color:#0084FF"><span class="icon iconify" data-icon="ri:zhihu-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode%E7%AC%AC283%E5%9C%BA%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3"><span class="toc-text">LeetCode第283场周赛题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81Excel-%E8%A1%A8%E4%B8%AD%E6%9F%90%E4%B8%AA%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E5%8D%95%E5%85%83%E6%A0%BC"><span class="toc-text">一、Excel 表中某个范围内的单元格</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%A8%A1%E6%8B%9F"><span class="toc-text">题解：模拟</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%90%91%E6%95%B0%E7%BB%84%E4%B8%AD%E8%BF%BD%E5%8A%A0-K-%E4%B8%AA%E6%95%B4%E6%95%B0"><span class="toc-text">二、向数组中追加 K 个整数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F-1"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%80%9D%E7%BB%B4"><span class="toc-text">题解：思维</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A0%B9%E6%8D%AE%E6%8F%8F%E8%BF%B0%E5%88%9B%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-text">三、根据描述创建二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F-2"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-text">题解</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://bbstudy.net/SoHotLB.github.io/weekly-contest-283/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="lb"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="lb's blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">LeetCode第283场周赛<a class="post-edit-link" href="https://github.com/SoHotLB/SoHotLB.github.io/tree/master/source/_posts/weekly-contest-283.md" target="_blank" title="编辑" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2022-09-07 21:19:54" itemprop="dateCreated datePublished" datetime="2022-09-07T21:19:54+08:00">2022-09-07</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="修改时间：2022-03-06 19:47:32" itemprop="dateModified" datetime="2022-03-06T19:47:32+08:00">2022-03-06</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">1.9k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">8m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><span class="icon iconify" data-icon="ri:eye-line"></span> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/SoHotLB.github.io/categories/LeetCode%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3/" style="--text-color:saddlebrown" itemprop="url" rel="index"><span itemprop="text">LeetCode周赛题解</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/SoHotLB.github.io/tags/LeetCode/" style="--text-color:#5298d1"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">LeetCode</span></a><a class="tag-item" href="/SoHotLB.github.io/tags/Algorithm/" style="--text-color:#FF0000"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">Algorithm</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h2 id="LeetCode第283场周赛题解"><a href="#LeetCode第283场周赛题解" class="headerlink" title="LeetCode第283场周赛题解"></a>LeetCode第283场周赛题解</h2><blockquote>
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/SoHotLB.github.io/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/SoHotLB.github.io/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/SoHotLB.github.io/about/" title="lb"><img width="96" loading="lazy" src="/SoHotLB.github.io/images/avatar.jpg" alt="lb"></a><div class="site-author-name"><a href="/SoHotLB.github.io/about/">lb</a></div><span class="site-name">lb's blog</span><sub class="site-subtitle">明天会在哪，勇敢无畏的去闯吧</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/SoHotLB.github.io/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/SoHotLB.github.io/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">40</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">6</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">7</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/SoHotLB" title="GitHub" target="_blank" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:2864939950@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><span class="icon iconify" data-icon="ri:mail-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/jue-ze-83-77/" title="知乎" target="_blank" style="color:#0084FF"><span class="icon iconify" data-icon="ri:zhihu-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode%E7%AC%AC283%E5%9C%BA%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3"><span class="toc-text">LeetCode第283场周赛题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81Excel-%E8%A1%A8%E4%B8%AD%E6%9F%90%E4%B8%AA%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E5%8D%95%E5%85%83%E6%A0%BC"><span class="toc-text">一、Excel 表中某个范围内的单元格</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%A8%A1%E6%8B%9F"><span class="toc-text">题解：模拟</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%90%91%E6%95%B0%E7%BB%84%E4%B8%AD%E8%BF%BD%E5%8A%A0-K-%E4%B8%AA%E6%95%B4%E6%95%B0"><span class="toc-text">二、向数组中追加 K 个整数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F-1"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%80%9D%E7%BB%B4"><span class="toc-text">题解：思维</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A0%B9%E6%8D%AE%E6%8F%8F%E8%BF%B0%E5%88%9B%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-text">三、根据描述创建二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F-2"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-text">题解</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://bbstudy.net/SoHotLB.github.io/weekly-contest-283/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="lb"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="lb's blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">LeetCode第283场周赛<a class="post-edit-link" href="https://github.com/SoHotLB/SoHotLB.github.io/tree/master/source/_posts/weekly-contest-283.md" target="_blank" title="编辑" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2022-09-07 21:19:54" itemprop="dateCreated datePublished" datetime="2022-09-07T21:19:54+08:00">2022-09-07</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="修改时间：2022-03-06 19:47:32" itemprop="dateModified" datetime="2022-03-06T19:47:32+08:00">2022-03-06</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">433</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">1m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><span class="icon iconify" data-icon="ri:eye-line"></span> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/SoHotLB.github.io/categories/LeetCode%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3/" style="--text-color:saddlebrown" itemprop="url" rel="index"><span itemprop="text">LeetCode周赛题解</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/SoHotLB.github.io/tags/LeetCode/" style="--text-color:#5298d1"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">LeetCode</span></a><a class="tag-item" href="/SoHotLB.github.io/tags/Algorithm/" style="--text-color:#FF0000"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">Algorithm</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h2 id="LeetCode第283场周赛题解"><a href="#LeetCode第283场周赛题解" class="headerlink" title="LeetCode第283场周赛题解"></a>LeetCode第283场周赛题解</h2><blockquote>
 <p>比赛地址：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/weekly-contest-283/">https://leetcode-cn.com/contest/weekly-contest-283/</a></p>
 </blockquote>
 <h3 id="一、Excel-表中某个范围内的单元格"><a href="#一、Excel-表中某个范围内的单元格" class="headerlink" title="一、Excel 表中某个范围内的单元格"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/cells-in-a-range-on-an-excel-sheet/">一、Excel 表中某个范围内的单元格</a></h3><h4 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h4><p>Excel 表中的一个单元格 (r, c) 会以字符串 “<col><row>“ 的形式进行表示，其中：</p>
@@ -69,19 +69,19 @@ IconifyProviders = {
 <p>找出所有满足 r1 &lt;= x &lt;= r2 且 c1 &lt;= y &lt;= c2 的单元格，并以列表形式返回。单元格应该按前面描述的格式用 字符串 表示，并以 非递减 顺序排列（先按列排，再按行排）。</p>
 <p><strong>示例1：</strong></p>
 <p><img src="https://gitee.com/serendipity_LB/img/raw/master/ex1drawio.png" alt="img" loading="lazy"></p>
-<pre class="language-none"><code class="language-none">输入：s &#x3D; &quot;K1:L2&quot;
+<pre><code>输入：s = &quot;K1:L2&quot;
 输出：[&quot;K1&quot;,&quot;K2&quot;,&quot;L1&quot;,&quot;L2&quot;]
 解释：
 上图显示了列表中应该出现的单元格。
-红色箭头指示单元格的出现顺序。</code></pre>
-<p><strong>示例2：</strong></p>
+红色箭头指示单元格的出现顺序。
+</code></pre><p><strong>示例2：</strong></p>
 <p><img src="https://gitee.com/serendipity_LB/img/raw/master/exam2drawio.png" alt="img" loading="lazy"></p>
-<pre class="language-none"><code class="language-none">输入：s &#x3D; &quot;A1:F1&quot;
+<pre><code>输入：s = &quot;A1:F1&quot;
 输出：[&quot;A1&quot;,&quot;B1&quot;,&quot;C1&quot;,&quot;D1&quot;,&quot;E1&quot;,&quot;F1&quot;]
 解释：
 上图显示了列表中应该出现的单元格。 
-红色箭头指示单元格的出现顺序。</code></pre>
-<p><strong>提示：</strong></p>
+红色箭头指示单元格的出现顺序。
+</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>s.length == 5</li>
 <li>‘A’ &lt;= s[0] &lt;= s[3] &lt;= ‘Z’</li>
@@ -89,38 +89,39 @@ IconifyProviders = {
 <li>s 由大写英文字母、数字、和 ‘:’ 组成</li>
 </ul>
 <h4 id="题解：模拟"><a href="#题解：模拟" class="headerlink" title="题解：模拟"></a>题解：模拟</h4><p>直接按照题意模拟即可</p>
-<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token function">cellsInRange</span><span class="token punctuation">(</span>string s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> l<span class="token operator">=</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'A'</span><span class="token punctuation">,</span>r<span class="token operator">=</span>s<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'A'</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> u<span class="token operator">=</span>s<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'0'</span><span class="token punctuation">,</span>d<span class="token operator">=</span>s<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'0'</span><span class="token punctuation">;</span>
-        string str<span class="token punctuation">;</span>
-        vector<span class="token operator">&lt;</span>string<span class="token operator">></span> ans<span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>l<span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>r<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>u<span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>d<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                str<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>
-                str<span class="token operator">+=</span>i<span class="token operator">+</span><span class="token char">'A'</span><span class="token punctuation">;</span>str<span class="token operator">+=</span>j<span class="token operator">+</span><span class="token char">'0'</span><span class="token punctuation">;</span>
-                ans<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution &#123;
+public:
+    vector<string> cellsInRange(string s) &#123;
+        int l=s[0]-'A',r=s[3]-'A';
+        int u=s[1]-'0',d=s[4]-'0';
+        string str;
+        vector<string> ans;
+        for(int i=l;i<=r;i++)&#123;
+            for(int j=u;j<=d;j++)&#123;
+                str="";
+                str+=i+'A';str+=j+'0';
+                ans.push_back(str);
+            &#125;
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
 <h3 id="二、向数组中追加-K-个整数"><a href="#二、向数组中追加-K-个整数" class="headerlink" title="二、向数组中追加 K 个整数"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/append-k-integers-with-minimal-sum/">二、向数组中追加 K 个整数</a></h3><h4 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h4><p>给你一个整数数组 nums 和一个整数 k 。请你向 nums 中追加 k 个 未 出现在 nums 中的、互不相同 的 正 整数，并使结果数组的元素和 最小 。</p>
 <p>返回追加到 nums 中的 k 个整数之和。</p>
 <p><strong>示例1：</strong></p>
-<pre class="language-none"><code class="language-none">输入：nums &#x3D; [1,4,25,10,25], k &#x3D; 2
+<pre><code>输入：nums = [1,4,25,10,25], k = 2
 输出：5
 解释：在该解法中，向数组中追加的两个互不相同且未出现的正整数是 2 和 3 。
-nums 最终元素和为 1 + 4 + 25 + 10 + 25 + 2 + 3 &#x3D; 70 ，这是所有情况中的最小值。
-所以追加到数组中的两个整数之和是 2 + 3 &#x3D; 5 ，所以返回 5 。</code></pre>
-<p><strong>示例2：</strong></p>
-<pre class="language-none"><code class="language-none">输入：nums &#x3D; [5,6], k &#x3D; 6
+nums 最终元素和为 1 + 4 + 25 + 10 + 25 + 2 + 3 = 70 ，这是所有情况中的最小值。
+所以追加到数组中的两个整数之和是 2 + 3 = 5 ，所以返回 5 。
+</code></pre><p><strong>示例2：</strong></p>
+<pre><code>输入：nums = [5,6], k = 6
 输出：25
 解释：在该解法中，向数组中追加的两个互不相同且未出现的正整数是 1 、2 、3 、4 、7 和 8 。
-nums 最终元素和为 5 + 6 + 1 + 2 + 3 + 4 + 7 + 8 &#x3D; 36 ，这是所有情况中的最小值。
-所以追加到数组中的两个整数之和是 1 + 2 + 3 + 4 + 7 + 8 &#x3D; 25 ，所以返回 25 。</code></pre>
-<p><strong>提示：</strong></p>
+nums 最终元素和为 5 + 6 + 1 + 2 + 3 + 4 + 7 + 8 = 36 ，这是所有情况中的最小值。
+所以追加到数组中的两个整数之和是 1 + 2 + 3 + 4 + 7 + 8 = 25 ，所以返回 25 。
+</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>$1 &lt;= nums.length &lt;= 10^5$</li>
 <li>$1 &lt;= nums[i], k &lt;= 10^9$</li>
@@ -134,53 +135,54 @@ nums 最终元素和为 5 + 6 + 1 + 2 + 3 + 4 + 7 + 8 &#x3D; 36 ，这是所有�
 <p>我们可以对最终数组元素总和理解为：(1+2+3)+(4+25+10+25)。</p>
 <p>对于新追加元素集合，直接使用等差数列求和公式即可：$num=\frac{n*(n+1)}{2}$。</p>
 <p>但是需要注意如果原来数组总存在多个&lt;=k的数，且彼此相同，例如：</p>
-<pre class="language-none"><code class="language-none">nums&#x3D;[1,1,2,3,7,8],k&#x3D;2</code></pre>
-<p>对于上述例子，我们只处理一次1，另一个1还是视为原来的数组元素总和。也就是理解为：(1+2+3+4+5)+(1+7+8)。</p>
+<pre><code>nums=[1,1,2,3,7,8],k=2
+</code></pre><p>对于上述例子，我们只处理一次1，另一个1还是视为原来的数组元素总和。也就是理解为：(1+2+3+4+5)+(1+7+8)。</p>
 <p>于是需要用集合判重，这里采用map。</p>
 <p>当然需要额外对数组排序。</p>
 <p>具体见代码。</p>
-<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token function">minimalKSum</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> n<span class="token operator">=</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">long</span> <span class="token keyword">long</span> m<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span>k<span class="token punctuation">;</span>
-        map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span>mp<span class="token punctuation">;</span>mp<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">long</span> <span class="token keyword">long</span> ans<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">long</span> <span class="token keyword">long</span> sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nums<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;=</span>m<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>mp<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                    mp<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>m<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
-                    ans<span class="token operator">+=</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span>
-            <span class="token punctuation">&#125;</span>
-            sum<span class="token operator">+=</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span>m<span class="token punctuation">)</span> ans<span class="token operator">+=</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        ans<span class="token operator">+=</span>m<span class="token operator">*</span><span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> ans<span class="token operator">-</span>sum<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution &#123;
+public:
+    long long minimalKSum(vector<int>& nums, int k) &#123;
+        int n=nums.size();
+        long long m=(long long)k;
+        map<int,int>mp;mp.clear();
+        long long ans=0;
+        long long sum=0;
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<n;i++)&#123;
+            if((long long)nums[i]<=m)&#123;
+                if(mp[nums[i]]==0)&#123;
+                    mp[nums[i]]=1;m++;
+                &#125;else&#123;
+                    ans+=nums[i];
+                &#125;
+            &#125;
+            sum+=(long long)nums[i];
+        &#125;
+        for(int i=0;i<n;i++)&#123;
+            if(nums[i]>m) ans+=(long long)nums[i];
+        &#125;
+        ans+=m*(m+1)/2;
+        return ans-sum;
+    &#125;
+&#125;;
+</code></pre>
 <h3 id="三、根据描述创建二叉树"><a href="#三、根据描述创建二叉树" class="headerlink" title="三、根据描述创建二叉树"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/create-binary-tree-from-descriptions/">三、根据描述创建二叉树</a></h3><h4 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h4><p>给你一个二维整数数组 descriptions ，其中 descriptions[i] = [parenti, childi, isLefti] 表示 parenti 是 childi 在 二叉树 中的 父节点，二叉树中各节点的值 互不相同 。此外：</p>
 <p>如果 isLefti == 1 ，那么 childi 就是 parenti 的左子节点。<br>如果 isLefti == 0 ，那么 childi 就是 parenti 的右子节点。<br>请你根据 descriptions 的描述来构造二叉树并返回其 根节点 。</p>
 <p>测试用例会保证可以构造出 有效 的二叉树。</p>
 <p><strong>示例1：</strong></p>
 <p><img src="https://gitee.com/serendipity_LB/img/raw/master/example1drawio.png" alt="img" loading="lazy"></p>
-<pre class="language-none"><code class="language-none">输入：descriptions &#x3D; [[20,15,1],[20,17,0],[50,20,1],[50,80,0],[80,19,1]]
+<pre><code>输入：descriptions = [[20,15,1],[20,17,0],[50,20,1],[50,80,0],[80,19,1]]
 输出：[50,20,80,15,17,19]
 解释：根节点是值为 50 的节点，因为它没有父节点。
-结果二叉树如上图所示。</code></pre>
-<p><strong>示例2：</strong></p>
+结果二叉树如上图所示。
+</code></pre><p><strong>示例2：</strong></p>
 <p><img src="https://gitee.com/serendipity_LB/img/raw/master/example2drawio.png" alt="img" loading="lazy"></p>
-<pre class="language-none"><code class="language-none">输入：descriptions &#x3D; [[1,2,1],[2,3,0],[3,4,1]]
+<pre><code>输入：descriptions = [[1,2,1],[2,3,0],[3,4,1]]
 输出：[1,2,null,null,3,4]
 解释：根节点是值为 1 的节点，因为它没有父节点。 
-结果二叉树如上图所示。 </code></pre>
-<p><strong>提示：</strong></p>
+结果二叉树如上图所示。
+</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>1 &lt;= descriptions.length &lt;= 104</li>
 <li>descriptions[i].length == 3</li>
@@ -191,7 +193,7 @@ nums 最终元素和为 5 + 6 + 1 + 2 + 3 + 4 + 7 + 8 &#x3D; 36 ，这是所有�
 <h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>通过数组par[]保存节点是否有父节点。数组TreeNode a[]保存所有的树节点。</p>
 <p>遍历descriptions数组，假设当前遍历的元素是x，判断a数组中是否存在x[0]和x[1]，如果不存在则加入a数组中，通过x[2]判断是左孩子或右孩子。</p>
 <p>由于节点数最多为100000，于是遍历1到100000，判断是否存在父节点不存在的情况，若当前节点父节点不存在即为根节点。</p>
-<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/**
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">/**
  * Definition for a binary tree node.
  * struct TreeNode &#123;
  *     int val;
@@ -201,33 +203,34 @@ nums 最终元素和为 5 + 6 + 1 + 2 + 3 + 4 + 7 + 8 &#x3D; 36 ，这是所有�
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;
  * &#125;;
- */</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> par<span class="token punctuation">[</span><span class="token number">100010</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    TreeNode<span class="token operator">*</span> a<span class="token punctuation">[</span><span class="token number">100010</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    TreeNode<span class="token operator">*</span> <span class="token function">createBinaryTree</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> descriptions<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">100000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>par<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> x<span class="token operator">:</span>descriptions<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            TreeNode<span class="token operator">*</span> far<span class="token operator">=</span>a<span class="token punctuation">[</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token constant">NULL</span><span class="token operator">?</span>a<span class="token punctuation">[</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token function">TreeNode</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span>a<span class="token punctuation">[</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            TreeNode<span class="token operator">*</span> son<span class="token operator">=</span>a<span class="token punctuation">[</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token constant">NULL</span><span class="token operator">?</span>a<span class="token punctuation">[</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token function">TreeNode</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span>a<span class="token punctuation">[</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                far<span class="token operator">-></span>left<span class="token operator">=</span>son<span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
-                far<span class="token operator">-></span>right<span class="token operator">=</span>son<span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-            par<span class="token punctuation">[</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">100000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span><span class="token constant">NULL</span><span class="token operator">&amp;&amp;</span>par<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                <span class="token keyword">return</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+ */
+class Solution &#123;
+public:
+    int par[100010];
+    TreeNode* a[100010];
+    TreeNode* createBinaryTree(vector<vector<int>>& descriptions) &#123;
+        for(int i=1;i<=100000;i++)&#123;
+            a[i]=NULL;par[i]=0;
+        &#125;
+        for(auto x:descriptions)&#123;
+            TreeNode* far=a[x[0]]==NULL?a[x[0]]=new TreeNode(x[0]):a[x[0]];
+            TreeNode* son=a[x[1]]==NULL?a[x[1]]=new TreeNode(x[1]):a[x[1]];
+            if(x[2])&#123;
+                far->left=son;
+            &#125;else&#123;
+                far->right=son;
+            &#125;
+            par[x[1]]=1;
+        &#125;
+        for(int i=1;i<=100000;i++)&#123;
+            if(a[i]!=NULL&&par[i]==0)&#123;
+                return a[i];
+            &#125;
+        &#125;
+        return NULL;
+    &#125;
+&#125;;
+</code></pre>
 </div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>lb</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://bbstudy.net/weekly-contest-283/" title="LeetCode第283场周赛">http://bbstudy.net/weekly-contest-283/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul><script>document.addEventListener('copy', function (event) {
   const clipboardData = event.clipboardData || window.clipboardData;
   if (!clipboardData) { return; }
@@ -236,7 +239,7 @@ nums 最终元素和为 5 + 6 + 1 + 2 + 3 + 4 + 7 + 8 &#x3D; 36 ，这是所有�
     event.preventDefault();
     clipboardData.setData('text/plain', text + '\n\n本文作者：lb\n本文链接：http://bbstudy.net/weekly-contest-283/\n版权声明：本博客所有文章除特别声明外，均默认采用 CC BY-NC-SA 4.0 许可协议。');
   }
-});</script></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/SoHotLB.github.io/weekly-contest-268/" rel="prev" title="LeetCode第268场周赛"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">LeetCode第268场周赛</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/SoHotLB.github.io/weekly-contest-286/" rel="next" title="LeetCode第286场周赛"><span class="post-nav-text">LeetCode第286场周赛</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> lb</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.7</span></div><div class="live-time"><span>本博客已运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+});</script></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/SoHotLB.github.io/weekly-contest-280/" rel="prev" title="LeetCode第280场周赛"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">LeetCode第280场周赛</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/SoHotLB.github.io/weekly-contest-289/" rel="next" title="LeetCode第289场周赛"><span class="post-nav-text">LeetCode第289场周赛</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> lb</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.7</span></div><div class="live-time"><span>本博客已运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
   setTimeout(blog_live_time, 1000);
   const start = new Date('2021-10-28T12:00:00');
   const now = new Date();
