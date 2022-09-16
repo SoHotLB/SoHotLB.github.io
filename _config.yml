@@ -66,6 +66,11 @@ prismjs:
   preprocess: true
   line_number: false
   tab_replace: ''
+# prism_plugin:
+#   mode: 'preprocess' # realtime/preprocess
+#   theme: 'one-dark'
+#   line_number: false # default false
+#   custom_css:
 
 
 # Home page setting

@@ -4,16 +4,16 @@ avatar:
   # url: http://lbbuket-blog.oss-cn-hangzhou.aliyuncs.com/blog-img/avatar-2022-09-10-22-34-11.jpg
   url: /images/avatar.jpg
   
-cdn:
-  # pre: https://cdn.jsdelivr.net/gh/SoHotLB/SoHotLB.github.io@main
-  pre: ''
-  css:
-  js:
-    base:
-    async:
-      # 默认引入的图标资源，使用 iconfont
-      iconfont: //at.alicdn.com/t/font_1140697_dxory92pb0h.js
-    defer:
+# cdn:
+#   # pre: https://cdn.jsdelivr.net/gh/SoHotLB/SoHotLB.github.io@main
+#   pre: ''
+#   css:
+#   js:
+#     base:
+#     async:
+#       # 默认引入的图标资源，使用 iconfont
+#       iconfont: //at.alicdn.com/t/font_1140697_dxory92pb0h.js
+#     defer:
 
 reward:
   enable: false
@@ -161,7 +161,7 @@ albums:
 tags:
   gra_stu: "#EA1730"
   可视化: "#4fc08d"
-  Codeforces: "#F4645F"
+  笔试: "#F4645F"
   LeetCode: "#5298d1"
   Java: "#026E00"
   Python: "#F14E32"
@@ -180,10 +180,8 @@ categories:
   机器学习: crimson
   个人总结: orange
   LeetCode周赛题解: saddlebrown
-  MAD: crimson
   教程: royalblue
-  笔记: dimgray
-  分享: '#0078e7'
+  笔试: '#0078e7'
   随笔: mediumpurple
   Blender: '#d04d2d'
   Linux: '#2577b1'
@@ -267,7 +265,7 @@ social:
 # 开启公告，每篇文章都可以显示
 notice:
   enable: false
-  content: 如果不累，那你的梦想岂不是很廉价
+  content: 少年的书桌上，没有虚度的光阴
 
 post_card:
   opacity: 0.8
@@ -298,11 +296,8 @@ toc:
 #   cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # 复制代码
-# codeblock:
-#   copy_btn: true
-#   prismjs:
-#     light: default
-#     dark: tomorrow
+codeblock:
+  copy_btn: true
 
 # 版权
 creative_commons:
