@@ -4,7 +4,7 @@
   <url>
     <loc>http://bbstudy.net/ali-2022915bishi/</loc>
     
-    <lastmod>2022-09-15</lastmod>
+    <lastmod>2022-09-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -458,14 +458,14 @@
   </url>
   
   <url>
-    <loc>http://bbstudy.net/tags/%E7%AC%94%E8%AF%95/</loc>
+    <loc>http://bbstudy.net/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/</loc>
     <lastmod>2022-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://bbstudy.net/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/</loc>
+    <loc>http://bbstudy.net/tags/%E7%AC%94%E8%AF%95/</loc>
     <lastmod>2022-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -495,6 +495,13 @@
   </url>
   
   <url>
+    <loc>http://bbstudy.net/categories/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2022-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://bbstudy.net/categories/%E7%AC%94%E8%AF%95/</loc>
     <lastmod>2022-09-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -510,13 +517,6 @@
   
   <url>
     <loc>http://bbstudy.net/categories/test/</loc>
-    <lastmod>2022-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://bbstudy.net/categories/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
