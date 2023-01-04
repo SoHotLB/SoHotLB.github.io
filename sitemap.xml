@@ -446,13 +446,6 @@
   </url>
   
   <url>
-    <loc>http://bbstudy.net/tags/%E7%AC%94%E8%AF%95/</loc>
-    <lastmod>2023-01-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://bbstudy.net/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -468,6 +461,13 @@
   
   <url>
     <loc>http://bbstudy.net/tags/gra-stu/</loc>
+    <lastmod>2023-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://bbstudy.net/tags/%E7%AC%94%E8%AF%95/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -497,14 +497,14 @@
   </url>
   
   <url>
-    <loc>http://bbstudy.net/categories/%E7%AC%94%E8%AF%95/</loc>
+    <loc>http://bbstudy.net/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://bbstudy.net/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://bbstudy.net/categories/%E7%AC%94%E8%AF%95/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
