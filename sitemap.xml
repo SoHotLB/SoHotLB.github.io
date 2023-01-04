@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bbstudy.net/ali-2022915bishi/</loc>
+    
+    <lastmod>2023-01-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://bbstudy.net/2021-summary/</loc>
     
     <lastmod>2023-01-04</lastmod>
@@ -14,15 +23,6 @@
     <loc>http://bbstudy.net/LeetCode-1802/</loc>
     
     <lastmod>2023-01-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://bbstudy.net/ali-2022915bishi/</loc>
-    
-    <lastmod>2022-09-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -425,13 +425,6 @@
 
   
   <url>
-    <loc>http://bbstudy.net/tags/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2023-01-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://bbstudy.net/tags/LeetCode/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -440,6 +433,13 @@
   
   <url>
     <loc>http://bbstudy.net/tags/Algorithm/</loc>
+    <lastmod>2023-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://bbstudy.net/tags/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -483,14 +483,14 @@
 
   
   <url>
-    <loc>http://bbstudy.net/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/</loc>
+    <loc>http://bbstudy.net/categories/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://bbstudy.net/categories/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</loc>
+    <loc>http://bbstudy.net/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -518,14 +518,14 @@
   </url>
   
   <url>
-    <loc>http://bbstudy.net/categories/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://bbstudy.net/categories/test/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://bbstudy.net/categories/test/</loc>
+    <loc>http://bbstudy.net/categories/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
