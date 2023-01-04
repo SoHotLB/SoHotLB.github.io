@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bbstudy.net/2021-summary/</loc>
+    
+    <lastmod>2023-01-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://bbstudy.net/LeetCode-1802/</loc>
     
     <lastmod>2023-01-04</lastmod>
@@ -263,15 +272,6 @@
   </url>
   
   <url>
-    <loc>http://bbstudy.net/2021-summary/</loc>
-    
-    <lastmod>2022-09-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://bbstudy.net/biweekly-contest-64/</loc>
     
     <lastmod>2022-09-06</lastmod>
@@ -446,6 +446,13 @@
   </url>
   
   <url>
+    <loc>http://bbstudy.net/tags/%E7%AC%94%E8%AF%95/</loc>
+    <lastmod>2023-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://bbstudy.net/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -461,13 +468,6 @@
   
   <url>
     <loc>http://bbstudy.net/tags/gra-stu/</loc>
-    <lastmod>2023-01-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://bbstudy.net/tags/%E7%AC%94%E8%AF%95/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -497,6 +497,13 @@
   </url>
   
   <url>
+    <loc>http://bbstudy.net/categories/%E7%AC%94%E8%AF%95/</loc>
+    <lastmod>2023-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://bbstudy.net/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -505,13 +512,6 @@
   
   <url>
     <loc>http://bbstudy.net/categories/LeetCode%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3/</loc>
-    <lastmod>2023-01-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://bbstudy.net/categories/%E7%AC%94%E8%AF%95/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
