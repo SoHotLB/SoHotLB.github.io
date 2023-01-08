@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="lb"><meta name="copyright" content="lb"><meta name="generator" content="Hexo 6.3.0"><meta name="theme" content="hexo-theme-yun"><title>LeetCode第307场周赛 | lb's blog</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"></script><script type="module">import { renderKatex } from '/js/utils.js'
+document.addEventListener("DOMContentLoaded", () => {
+  renderKatex({
+    ...{},
+    ...true?.options,
+  });
+});</script><link rel="icon" type="image/svg+xml" href="/SoHotLB.github.io/yun.svg"><link rel="mask-icon" href="/SoHotLB.github.io/yun.svg" color="#0078E7"><link rel="preload" href="/SoHotLB.github.io/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/SoHotLB.github.io/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"bbstudy.net","root":"/SoHotLB.github.io/","title":["l","b","的","博","客"],"version":"1.10.7","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"data/sentences.json"},"algolia":{"appID":"29XB8OHD4L","apiKey":"ea0ac9dfc459befc0894447d694fbba3","indexName":"lbblog","hits":{"per_page":8}},"fireworks":{"colors":null},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/SoHotLB.github.io/css/hexo-theme-yun.css"><script src="/SoHotLB.github.io/js/hexo-theme-yun.js" type="module"></script><link rel="alternate" href="/SoHotLB.github.io/atom.xml" title="lb's blog" type="application/atom+xml"><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="LeetCode第307场周赛题解 比赛地址：https:&#x2F;&#x2F;leetcode.cn&#x2F;contest&#x2F;weekly-contest-327&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode第307场周赛">
+<meta property="og:url" content="http://bbstudy.net/weekly-contest-327/index.html">
+<meta property="og:site_name" content="lb&#39;s blog">
+<meta property="og:description" content="LeetCode第307场周赛题解 比赛地址：https:&#x2F;&#x2F;leetcode.cn&#x2F;contest&#x2F;weekly-contest-327&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-08T04:10:44.872Z">
+<meta property="article:modified_time" content="2023-01-08T04:39:15.710Z">
+<meta property="article:author" content="lb">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="Algorithm">
+<meta name="twitter:card" content="summary"><script>(function() {
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/SoHotLB.github.io/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/SoHotLB.github.io/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/SoHotLB.github.io/about/" title="lb"><img width="96" loading="lazy" src="/SoHotLB.github.io/images/avatar.jpg" alt="lb"></a><div class="site-author-name"><a href="/SoHotLB.github.io/about/">lb</a></div><span class="site-name">lb's blog</span><sub class="site-subtitle">明天会在哪，勇敢无畏的去闯吧</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/SoHotLB.github.io/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/SoHotLB.github.io/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">47</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">9</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">8</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/SoHotLB" title="GitHub" target="_blank" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:2864939950@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><span class="icon iconify" data-icon="ri:mail-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/jue-ze-83-77/" title="知乎" target="_blank" style="color:#0084FF"><span class="icon iconify" data-icon="ri:zhihu-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode%E7%AC%AC307%E5%9C%BA%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3"><span class="toc-text">LeetCode第307场周赛题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%AD%A3%E6%95%B4%E6%95%B0%E5%92%8C%E8%B4%9F%E6%95%B4%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E8%AE%A1%E6%95%B0"><span class="toc-text">一、正整数和负整数的最大计数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%A8%A1%E6%8B%9F"><span class="toc-text">题解：模拟</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81-%E6%89%A7%E8%A1%8C-K-%E6%AC%A1%E6%93%8D%E4%BD%9C%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%86%E6%95%B0"><span class="toc-text">二、 执行 K 次操作后的最大分数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F-1"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E8%B4%AA%E5%BF%83"><span class="toc-text">题解：贪心</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BD%BF%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%BB%E4%B8%8D%E5%90%8C%E5%AD%97%E7%AC%A6%E7%9A%84%E6%95%B0%E7%9B%AE%E7%9B%B8%E7%AD%89"><span class="toc-text">三、使字符串总不同字符的数目相等</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F-2"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E5%93%88%E5%B8%8C"><span class="toc-text">题解：哈希</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://bbstudy.net/SoHotLB.github.io/weekly-contest-327/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="lb"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="lb's blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">LeetCode第307场周赛<a class="post-edit-link" href="https://github.com/SoHotLB/SoHotLB.github.io/tree/master/source/_posts/weekly-contest-327.md" target="_blank" title="编辑" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2023-01-08 12:10:44" itemprop="dateCreated datePublished" datetime="2023-01-08T12:10:44+08:00">2023-01-08</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">1.4k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">6m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><span class="icon iconify" data-icon="ri:eye-line"></span> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/SoHotLB.github.io/categories/LeetCode%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3/" style="--text-color:saddlebrown" itemprop="url" rel="index"><span itemprop="text">LeetCode周赛题解</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/SoHotLB.github.io/tags/LeetCode/" style="--text-color:#5298d1"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">LeetCode</span></a><a class="tag-item" href="/SoHotLB.github.io/tags/Algorithm/" style="--text-color:#FF0000"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">Algorithm</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h2 id="LeetCode第307场周赛题解"><a href="#LeetCode第307场周赛题解" class="headerlink" title="LeetCode第307场周赛题解"></a>LeetCode第307场周赛题解</h2><blockquote>
+<p>比赛地址：<a target="_blank" rel="noopener" href="https://leetcode.cn/contest/weekly-contest-327/">https://leetcode.cn/contest/weekly-contest-327/</a></p>
+</blockquote>
+<span id="more"></span>
+<h3 id="一、正整数和负整数的最大计数"><a href="#一、正整数和负整数的最大计数" class="headerlink" title="一、正整数和负整数的最大计数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-count-of-positive-integer-and-negative-integer/">一、正整数和负整数的最大计数</a></h3><h4 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h4><p>给你一个按 非递减顺序 排列的数组 nums ，返回正整数数目和负整数数目中的最大值。</p>
+<ul>
+<li>换句话讲，如果 nums 中正整数的数目是 pos ，而负整数的数目是 neg ，返回 pos 和 neg二者中的最大值。</li>
+</ul>
+<p>注意：0 既不是正整数也不是负整数。</p>
+<p><strong>示例1：</strong></p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown">输入：nums = [-2,-1,-1,1,2,3]
+输出：3
+解释：共有 3 个正整数和 3 个负整数。计数得到的最大值是 3 。</code></pre>
+<p><strong>示例2：</strong></p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown">输入：nums = [-3,-2,-1,0,0,1,2]
+输出：3
+解释：共有 2 个正整数和 3 个负整数。计数得到的最大值是 3 。</code></pre>
+<p><strong>示例3：</strong></p>
+<pre class="language-none"><code class="language-none">输入：nums &#x3D; [5,20,66,1314]
+输出：4
+解释：共有 4 个正整数和 0 个负整数。计数得到的最大值是 4 。</code></pre>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 2000</code></li>
+<li><code>-2000 &lt;= nums[i] &lt;= 2000</code></li>
+<li><code>nums</code> 按 <strong>非递减顺序</strong> 排列。</li>
+</ul>
+<h4 id="题解：模拟"><a href="#题解：模拟" class="headerlink" title="题解：模拟"></a>题解：模拟</h4><p>按照题意记录正整数数目和负整数数目，然后取两者最大值即可。</p>
+<p><strong>C++代码：</strong></p>
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">maximumCount</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> num1<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>num2<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> n<span class="token operator">=</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span> num1<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span> num2<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token function">max</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span>num2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+<h3 id="二、-执行-K-次操作后的最大分数"><a href="#二、-执行-K-次操作后的最大分数" class="headerlink" title="二、 执行 K 次操作后的最大分数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximal-score-after-applying-k-operations/">二、 执行 K 次操作后的最大分数</a></h3><h4 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h4><p>给你一个下标从 0 开始的整数数组 nums 和一个整数 k 。你的 起始分数 为 0 。</p>
+<p>在一步 操作 中：</p>
+<ol>
+<li>选出一个满足 0 &lt;= i &lt; nums.length 的下标 i ，</li>
+<li>将你的 分数 增加 nums[i] ，并且</li>
+<li>将 nums[i] 替换为 $ceil(nums[i] / 3)$ 。</li>
+</ol>
+<p>返回在 恰好 执行 k 次操作后，你可能获得的最大分数。</p>
+<p>向上取整函数 $ceil(val)$ 的结果是大于或等于 val 的最小整数。</p>
+<p><strong>示例1：</strong></p>
+<pre class="language-none"><code class="language-none">输入：nums &#x3D; [10,10,10,10,10], k &#x3D; 5
+输出：50
+解释：对数组中每个元素执行一次操作。最后分数是 10 + 10 + 10 + 10 + 10 &#x3D; 50 。</code></pre>
+<p><strong>示例2：</strong></p>
+<pre class="language-none"><code class="language-none">输入：nums &#x3D; [1,10,3,3,3], k &#x3D; 3
+输出：17
+解释：可以执行下述操作：
+第 1 步操作：选中 i &#x3D; 1 ，nums 变为 [1,4,3,3,3] 。分数增加 10 。
+第 2 步操作：选中 i &#x3D; 1 ，nums 变为 [1,2,3,3,3] 。分数增加 4 。
+第 3 步操作：选中 i &#x3D; 2 ，nums 变为 [1,1,1,3,3] 。分数增加 3 。
+最后分数是 10 + 4 + 3 &#x3D; 17 。</code></pre>
+<p><strong>提示</strong></p>
+<ul>
+<li>$1 &lt;= nums.length, k &lt;= 10^5$</li>
+<li>$1 &lt;= nums[i] &lt;= 10^9$</li>
+</ul>
+<h4 id="题解：贪心"><a href="#题解：贪心" class="headerlink" title="题解：贪心"></a>题解：贪心</h4><p>每次处理数组中最大的元素即可，但是如果暴力寻找最大元素肯定不可行，于是不妨使用优先队列，每次找队顶元素，然后将其替换为 $ceil(nums[i]/3)$ 再放入队中即可。</p>
+<p><strong>C++代码：</strong></p>
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token function">maxKelements</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        priority_queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">,</span> less<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">></span> q<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> n<span class="token operator">=</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> <span class="token keyword">long</span> ans<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> now<span class="token operator">=</span>q<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ans<span class="token operator">+=</span>now<span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>now<span class="token operator">%</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                now <span class="token operator">=</span> now<span class="token operator">/</span><span class="token number">3</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                now <span class="token operator">=</span> now<span class="token operator">/</span><span class="token number">3</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>now<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+<h3 id="三、使字符串总不同字符的数目相等"><a href="#三、使字符串总不同字符的数目相等" class="headerlink" title="三、使字符串总不同字符的数目相等"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/make-number-of-distinct-characters-equal/">三、使字符串总不同字符的数目相等</a></h3><h4 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h4><p>给你两个下标从 0 开始的字符串 word1 和 word2 。</p>
+<p>一次 移动 由以下两个步骤组成：</p>
+<ul>
+<li>选中两个下标 i 和 j ，分别满足 0 &lt;= i &lt; word1.length 和 0 &lt;= j &lt; word2.length ，</li>
+<li>交换 word1[i] 和 word2[j] 。</li>
+</ul>
+<p>如果可以通过 恰好一次 移动，使 word1 和 word2 中不同字符的数目相等，则返回 true ；否则，返回 false 。</p>
+<p><strong>示例1：</strong></p>
+<pre class="language-none"><code class="language-none">输入：word1 &#x3D; &quot;ac&quot;, word2 &#x3D; &quot;b&quot;
+输出：false
+解释：交换任何一组下标都会导致第一个字符串中有 2 个不同的字符，而在第二个字符串中只有 1 个不同字符。</code></pre>
+<p><strong>示例2：</strong></p>
+<pre class="language-none"><code class="language-none">输入：word1 &#x3D; &quot;abcc&quot;, word2 &#x3D; &quot;aab&quot;
+输出：true
+解释：交换第一个字符串的下标 2 和第二个字符串的下标 0 。之后得到 word1 &#x3D; &quot;abac&quot; 和 word2 &#x3D; &quot;cab&quot; ，各有 3 个不同字符。</code></pre>
+<p><strong>示例3：</strong></p>
+<pre class="language-none"><code class="language-none">输入：word1 &#x3D; &quot;abcde&quot;, word2 &#x3D; &quot;fghij&quot;
+输出：true
+解释：无论交换哪一组下标，两个字符串中都会有 5 个不同字符。</code></pre>
+<p><strong>提示：</strong></p>
+<ul>
+<li>$1 &lt;= word1.length, word2.length &lt;= 10^5$</li>
+<li><code>word1</code> 和 <code>word2</code> 仅由小写英文字母组成。</li>
+</ul>
+<h4 id="题解：哈希"><a href="#题解：哈希" class="headerlink" title="题解：哈希"></a>题解：哈希</h4><p>使用两个哈希表mp1、mp2分别存储word1和word2中出现的字母及其个数。</p>
+<p>然后遍历两个哈希表，假设此时交换的字母分别为哈希表中的第i个元素和第j个元素：</p>
+<ul>
+<li>如果两个字母相同，则判断原始两个字符串字母个数是否相同<ul>
+<li>如果相同，符合题意，直接返回true</li>
+<li>如果不相同，则继续遍历</li>
+</ul>
+</li>
+<li>如果两个字母不相同，则判断mp2是否存在当前mp1遍历的字母，mp1是否存在mp2当前遍历的字母；以及mp1和mp2是否只存在一个当前字母，具体见代码。</li>
+</ul>
+<p><strong>C++代码：</strong></p>
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+    map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> mp1<span class="token punctuation">,</span>mp2<span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">isItPossible</span><span class="token punctuation">(</span>string s1<span class="token punctuation">,</span> string s2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> n1<span class="token operator">=</span>s1<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> n2<span class="token operator">=</span>s2<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mp1<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>mp2<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n1<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            mp1<span class="token punctuation">[</span>s1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'a'</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n2<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> mp2<span class="token punctuation">[</span>s2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'a'</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> cnt1<span class="token operator">=</span>mp1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> cnt2<span class="token operator">=</span>mp2<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> it1<span class="token operator">=</span>mp1<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it1<span class="token operator">!=</span>mp1<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it1<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> it2<span class="token operator">=</span>mp2<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it2<span class="token operator">!=</span>mp2<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it2<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>it1<span class="token operator">-></span>first <span class="token operator">==</span> it2<span class="token operator">-></span>first<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    <span class="token keyword">if</span><span class="token punctuation">(</span>cnt1<span class="token operator">==</span>cnt2<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                    <span class="token keyword">continue</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+                cnt1<span class="token operator">=</span>mp1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> cnt2<span class="token operator">=</span>mp2<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>mp2<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>it1<span class="token operator">-></span>first<span class="token punctuation">)</span><span class="token punctuation">)</span> cnt2<span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>mp1<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>it2<span class="token operator">-></span>first<span class="token punctuation">)</span><span class="token punctuation">)</span> cnt1<span class="token operator">++</span><span class="token punctuation">;</span>
+                
+                <span class="token keyword">if</span><span class="token punctuation">(</span>it1<span class="token operator">-></span>second<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span> cnt1<span class="token operator">--</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>it2<span class="token operator">-></span>second<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span> cnt2<span class="token operator">--</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>cnt1<span class="token operator">==</span>cnt2<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+</div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>lb</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://bbstudy.net/weekly-contest-327/" title="LeetCode第307场周赛">http://bbstudy.net/weekly-contest-327/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul><script>document.addEventListener('copy', function (event) {
+  const clipboardData = event.clipboardData || window.clipboardData;
+  if (!clipboardData) { return; }
+  const text = window.getSelection().toString();
+  if (text) {
+    event.preventDefault();
+    clipboardData.setData('text/plain', text + '\n\n本文作者：lb\n本文链接：http://bbstudy.net/weekly-contest-327/\n版权声明：本博客所有文章除特别声明外，均默认采用 CC BY-NC-SA 4.0 许可协议。');
+  }
+});</script></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/SoHotLB.github.io/LeetCode-1801/" rel="next" title="【LeetCode每日一题】1801.积压订单中的订单总数"><span class="post-nav-text">【LeetCode每日一题】1801.积压订单中的订单总数</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2023 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> lb</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.7</span></div><div class="live-time"><span>本博客已运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-10-28T12:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = ` ${passDay} 天 ${passHour} 小时 ${passMinute} 分 ${passSecond} 秒`;
+}
+blog_live_time();
+</script></div><div id="busuanzi"><span id="busuanzi_container_site_uv" title="总访客量"><span><span class="icon iconify" data-icon="ri:user-line"></span></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><span class="icon iconify" data-icon="ri:eye-line"></span></span><span id="busuanzi_value_site_pv"></span></span><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="搜索"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:search-line"></span></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script defer src="https://fastly.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script defer src="https://fastly.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script defer src="/SoHotLB.github.io/js/search/algolia-search.js" type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><span class="icon iconify" data-icon="ri:close-line"></span></span></div><div class="search-input-container"></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div class="algolia-pagination" id="algolia-pagination"></div></div></div><script>function initMourn() {
+  const date = new Date();
+  const today = (date.getMonth() + 1) + "-" + date.getDate()
+  const mourn_days = ["4-4","9-18"]
+  if (mourn_days.includes(today)) {
+    document.documentElement.style.filter = "grayscale(1)";
+  }
+}
+initMourn();</script></body></html>
