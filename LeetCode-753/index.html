@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="lb"><meta name="copyright" content="lb"><meta name="generator" content="Hexo 6.3.0"><meta name="theme" content="hexo-theme-yun"><title>【LeetCode每日一题】753. 破解保险箱 | lb's blog</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"></script><script type="module">import { renderKatex } from '/js/utils.js'
+document.addEventListener("DOMContentLoaded", () => {
+  renderKatex({
+    ...{},
+    ...true?.options,
+  });
+});</script><link rel="icon" type="image/svg+xml" href="/SoHotLB.github.io/yun.svg"><link rel="mask-icon" href="/SoHotLB.github.io/yun.svg" color="#0078E7"><link rel="preload" href="/SoHotLB.github.io/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/SoHotLB.github.io/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"bbstudy.net","root":"/SoHotLB.github.io/","title":["l","b","的","博","客"],"version":"1.10.7","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"data/sentences.json"},"algolia":{"appID":"29XB8OHD4L","apiKey":"ea0ac9dfc459befc0894447d694fbba3","indexName":"lbblog","hits":{"per_page":8}},"fireworks":{"colors":null},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/SoHotLB.github.io/css/hexo-theme-yun.css"><script src="/SoHotLB.github.io/js/hexo-theme-yun.js" type="module"></script><link rel="alternate" href="/SoHotLB.github.io/atom.xml" title="lb's blog" type="application/atom+xml"><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="题目链接：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;cracking-the-safe&#x2F; 题目难度：困难">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【LeetCode每日一题】753. 破解保险箱">
+<meta property="og:url" content="http://bbstudy.net/LeetCode-753/index.html">
+<meta property="og:site_name" content="lb&#39;s blog">
+<meta property="og:description" content="题目链接：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;cracking-the-safe&#x2F; 题目难度：困难">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-10T03:42:44.306Z">
+<meta property="article:modified_time" content="2023-01-10T03:56:59.044Z">
+<meta property="article:author" content="lb">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="Algorithm">
+<meta name="twitter:card" content="summary"><script>(function() {
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/SoHotLB.github.io/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/SoHotLB.github.io/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/SoHotLB.github.io/about/" title="lb"><img width="96" loading="lazy" src="/SoHotLB.github.io/images/avatar.jpg" alt="lb"></a><div class="site-author-name"><a href="/SoHotLB.github.io/about/">lb</a></div><span class="site-name">lb's blog</span><sub class="site-subtitle">明天会在哪，勇敢无畏的去闯吧</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/SoHotLB.github.io/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/SoHotLB.github.io/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">49</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">10</span></a></div><div class="site-state-item"><a href="/SoHotLB.github.io/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">8</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/SoHotLB" title="GitHub" target="_blank" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:2864939950@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><span class="icon iconify" data-icon="ri:mail-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/jue-ze-83-77/" title="知乎" target="_blank" style="color:#0084FF"><span class="icon iconify" data-icon="ri:zhihu-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF"><span class="toc-text">题解：欧拉回路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E4%BB%A3%E7%A0%81"><span class="toc-text">C++代码</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://bbstudy.net/SoHotLB.github.io/LeetCode-753/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="lb"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="lb's blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">【LeetCode每日一题】753. 破解保险箱<a class="post-edit-link" href="https://github.com/SoHotLB/SoHotLB.github.io/tree/master/source/_posts/LeetCode-753.md" target="_blank" title="编辑" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2023-01-10 11:42:44" itemprop="dateCreated datePublished" datetime="2023-01-10T11:42:44+08:00">2023-01-10</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">574</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">2m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><span class="icon iconify" data-icon="ri:eye-line"></span> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/SoHotLB.github.io/categories/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" style="--text-color:orange" itemprop="url" rel="index"><span itemprop="text">LeetCode每日一题</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/SoHotLB.github.io/tags/LeetCode/" style="--text-color:#5298d1"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">LeetCode</span></a><a class="tag-item" href="/SoHotLB.github.io/tags/Algorithm/" style="--text-color:#FF0000"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">Algorithm</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><blockquote>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/cracking-the-safe/">https://leetcode.cn/problems/cracking-the-safe/</a></p>
+<p>题目难度：困难</p>
+</blockquote>
+<span id="more"></span>
+<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>不要看中文题面！！！翻译的一塌糊涂。</p>
+<p>原始题目要求：求一个最短的字符串，需要包含从$0\sim k^n$（k进制）中的所有数字。</p>
+<p><strong>示例1：</strong></p>
+<pre class="language-none"><code class="language-none">输入: n &#x3D; 1, k &#x3D; 2
+输出: &quot;01&quot;
+说明: &quot;10&quot;也可以打开保险箱。</code></pre>
+<p><strong>示例2：</strong></p>
+<pre class="language-none"><code class="language-none">输入: n &#x3D; 2, k &#x3D; 2
+输出: &quot;00110&quot;
+说明: &quot;01100&quot;, &quot;10011&quot;, &quot;11001&quot; 也能打开保险箱。</code></pre>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>n</code> 的范围是 <code>[1, 4]</code>。</li>
+<li><code>k</code> 的范围是 <code>[1, 10]</code>。</li>
+<li><code>k^n</code> 最大可能为 <code>4096</code>。</li>
+</ul>
+<h3 id="题解：欧拉回路"><a href="#题解：欧拉回路" class="headerlink" title="题解：欧拉回路"></a>题解：欧拉回路</h3><p>参考题解：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/cracking-the-safe/solution/yi-bu-yi-bu-tui-dao-chu-0ms-jie-fa-tan-xin-gou-zao/">https://leetcode.cn/problems/cracking-the-safe/solution/yi-bu-yi-bu-tui-dao-chu-0ms-jie-fa-tan-xin-gou-zao/</a></p>
+<p>题意有点难懂，先对其进行转换：</p>
+<p>将所有的n - 1位数作为节点，每个节点有k条边（节点上添加数字$0 \sim k-1$视为一条边）</p>
+<p>然后题目便转化为从任一节点出发，能够找到一条路径，<strong>经过途中所有的边且均只经过一次</strong>，然后把边上的数字写入字符串，该字符串即为所求解。</p>
+<p>问题便转化为了求<strong>图的欧拉回路问题</strong>。</p>
+<h4 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h4><pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    string <span class="token function">crackSafe</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> kn <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> kn_1 <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//将所有n-1位数作为节点的节点个数</span>
+        <span class="token keyword">int</span> num<span class="token punctuation">[</span>kn_1<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">//表示k^(n-1)个节点的下一位可以从k-1选到0，</span>
+        <span class="token comment">//当前索引处对应元素值表示该节点已经把比元素值大的值作为下一数字添加过了</span>
+        <span class="token function">fill</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> num <span class="token operator">+</span> kn_1<span class="token punctuation">,</span> k<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//字符串初始化，结果一定为kn+n-1位 </span>
+        string <span class="token function">s</span><span class="token punctuation">(</span>kn <span class="token operator">+</span> <span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token char">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token comment">//i从n-1开始递增，即初始节点为n-1个0（00....）</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> node<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> num<span class="token punctuation">[</span>node<span class="token punctuation">]</span><span class="token operator">--</span> <span class="token operator">+</span> <span class="token char">'0'</span><span class="token punctuation">;</span> <span class="token comment">//更新字符串，表示下一次该节点要选的下一数字</span>
+            node <span class="token operator">=</span> node<span class="token operator">*</span>k <span class="token operator">-</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token char">'0'</span><span class="token punctuation">)</span><span class="token operator">*</span>kn_1 <span class="token operator">+</span> num<span class="token punctuation">[</span>node<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">//更新当前节点</span>
+            <span class="token comment">/**
+             * 左移操作
+             * 1. 乘以k
+             * 2. 减去左侧超出的一位数字（这位数字已经到了k^(n-1)上，所以需要乘以k^(n-1)
+             * 3. 加上右边进来的新数字（由于num[node]--，所以需要+1）
+            */</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> s<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+</div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>lb</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://bbstudy.net/LeetCode-753/" title="【LeetCode每日一题】753. 破解保险箱">http://bbstudy.net/LeetCode-753/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul><script>document.addEventListener('copy', function (event) {
+  const clipboardData = event.clipboardData || window.clipboardData;
+  if (!clipboardData) { return; }
+  const text = window.getSelection().toString();
+  if (text) {
+    event.preventDefault();
+    clipboardData.setData('text/plain', text + '\n\n本文作者：lb\n本文链接：http://bbstudy.net/LeetCode-753/\n版权声明：本博客所有文章除特别声明外，均默认采用 CC BY-NC-SA 4.0 许可协议。');
+  }
+});</script></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/SoHotLB.github.io/graph-theory/" rel="prev" title="LeetCode图论算法汇总"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">LeetCode图论算法汇总</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/SoHotLB.github.io/weekly-contest-327/" rel="next" title="LeetCode第327场周赛"><span class="post-nav-text">LeetCode第327场周赛</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2023 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> lb</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.7</span></div><div class="live-time"><span>本博客已运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-10-28T12:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = ` ${passDay} 天 ${passHour} 小时 ${passMinute} 分 ${passSecond} 秒`;
+}
+blog_live_time();
+</script></div><div id="busuanzi"><span id="busuanzi_container_site_uv" title="总访客量"><span><span class="icon iconify" data-icon="ri:user-line"></span></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><span class="icon iconify" data-icon="ri:eye-line"></span></span><span id="busuanzi_value_site_pv"></span></span><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="搜索"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:search-line"></span></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script defer src="https://fastly.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script defer src="https://fastly.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script defer src="/SoHotLB.github.io/js/search/algolia-search.js" type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><span class="icon iconify" data-icon="ri:close-line"></span></span></div><div class="search-input-container"></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div class="algolia-pagination" id="algolia-pagination"></div></div></div><script>function initMourn() {
+  const date = new Date();
+  const today = (date.getMonth() + 1) + "-" + date.getDate()
+  const mourn_days = ["4-4","9-18"]
+  if (mourn_days.includes(today)) {
+    document.documentElement.style.filter = "grayscale(1)";
+  }
+}
+initMourn();</script></body></html>
